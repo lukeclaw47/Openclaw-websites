@@ -3,765 +3,715 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>FlowFix Plumbing | Reliable Local Plumbing Services</title>
+<title>FlowFix Plumbing – Your Trusted Local Plumber in Sydney</title>
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
-  * {
-    box-sizing: border-box;
+  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+  :root {
+    --primary-color: #007a5a;
+    --secondary-color: #004c38;
+    --accent-color: #50c878;
+    --background-gradient: linear-gradient(135deg, #007a5a 0%, #004c38 100%);
+    --shadow: rgba(0, 0, 0, 0.12);
+    --max-width: 1200px;
+    --font-family: 'Inter', sans-serif;
   }
-  html {
-    scroll-behavior: smooth;
+  *, *::before, *::after {
+    box-sizing: border-box;
   }
   body {
     margin: 0;
-    font-family: 'Montserrat', sans-serif;
-    background: #f7f9fc;
-    color: #222;
+    font-family: var(--font-family);
+    background: #f7f9f9;
+    color: #333;
     line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
   a {
-    color: #007a4d;
+    color: var(--primary-color);
     text-decoration: none;
   }
-  a:hover, a:focus {
+  a:hover,
+  a:focus {
     text-decoration: underline;
   }
-  h1,h2,h3,h4 {
-    margin-top: 0;
+  img {
+    max-width: 100%;
+    height: auto;
   }
-  h1 {
-    font-weight: 700;
-    font-size: 2.8rem;
-    line-height: 1.1;
-    color: #004d26;
-  }
-  h2 {
-    color: #007a4d;
-    font-weight: 700;
-    font-size: 2rem;
-    margin-bottom: 1rem;
-  }
-  h3 {
-    font-weight: 600;
-    font-size: 1.3rem;
-    margin-bottom: .75rem;
-    color: #004d26cc;
-  }
-  p {
-    font-weight: 400;
-    font-size: 1rem;
-    margin-bottom: 1.2rem;
-    color: #222;
-  }
-  .container {
-    max-width: 1100px;
-    margin-left: auto;
-    margin-right: auto;
-    padding: 0 1.25rem 3rem;
-  }
-  .hero {
-    background: linear-gradient(135deg, #007a4d 0%, #004d26 100%);
-    color: #e6f1e8;
-    padding: 5rem 1.25rem 5rem;
-    text-align: center;
+  header {
+    background: var(--background-gradient);
+    color: #fff;
+    padding: 3rem 1.5rem 5rem 1.5rem;
     position: relative;
   }
-  .hero h1 {
-    font-size: 3rem;
+  .container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 0 1.5rem;
   }
-  .hero h2 {
-    font-weight: 500;
-    font-size: 1.4rem;
+  header h1 {
+    font-weight: 700;
+    font-size: 2.75rem;
+    line-height: 1.1;
+    margin-bottom: 0.5rem;
     max-width: 600px;
-    margin: 0 auto 2rem;
-    color: #c6deb9;
+  }
+  header p.lead {
+    font-weight: 600;
+    font-size: 1.25rem;
+    max-width: 650px;
+    margin-bottom: 1.75rem;
+    color: #d6ede3;
   }
   .btn-primary {
-    background: #e6f1e8;
-    color: #004d26;
-    border: none;
-    padding: 0.9rem 2.3rem;
-    font-weight: 700;
-    font-size: 1.05rem;
-    border-radius: 50px;
-    cursor: pointer;
-    box-shadow: 0 6px 12px rgb(0 77 38 / 0.35);
-    transition: background-color 0.3s ease, color 0.3s ease;
     display: inline-block;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
+    background: var(--accent-color);
+    color: #fff;
+    font-weight: 700;
+    padding: 1rem 2rem;
+    border-radius: 5px;
+    box-shadow: 0 5px 15px var(--shadow);
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+    user-select: none;
+    border: none;
+    font-size: 1.125rem;
+    text-align: center;
+    white-space: nowrap;
   }
   .btn-primary:hover,
   .btn-primary:focus {
-    background: #004d26;
-    color: #e6f1e8;
-    outline: none;
-  }
-  .trust-section {
-    background: white;
-    padding: 2.5rem 1rem;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgb(0 77 38 / 0.1);
-    max-width: 800px;
-    margin: -4rem auto 4rem;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 2rem;
-  }
-  .trust-badge {
-    flex: 1 1 160px;
-    background: linear-gradient(135deg, #004d26 0%, #007a4d 100%);
-    color: white;
-    border-radius: 10px;
-    padding: 1.25rem 1rem;
-    font-weight: 700;
-    font-size: 1rem;
-    box-shadow: 0 5px 15px rgb(0 77 38 / 0.3);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 110px;
-    text-align: center;
-    line-height: 1.2;
-  }
-  .trust-badge span {
-    font-size: 2rem;
-    margin-bottom: 0.5rem;
-    user-select: none;
+    background: #43b66f;
   }
   section {
-    margin-bottom: 4.5rem;
+    padding: 4rem 1.5rem 4rem 1.5rem;
   }
-  section > h2 {
+  h2.section-title {
     text-align: center;
-    margin-bottom: 2.5rem;
+    font-weight: 700;
+    font-size: 2rem;
+    margin-bottom: 2rem;
+    color: var(--secondary-color);
   }
-  .service-cards {
-    display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
-    gap: 2rem;
-  }
-  .card {
-    background: white;
-    border-radius: 12px;
-    box-shadow: 0 8px 20px rgb(0 0 0 / 0.07);
-    padding: 1.75rem 1.5rem 2rem;
-    transition: box-shadow 0.3s ease;
-    display: flex;
-    flex-direction: column;
-  }
-  .card:hover, .card:focus-within {
-    box-shadow: 0 12px 28px rgb(0 122 77 / 0.3);
-    outline: none;
-  }
-  .card-icon {
-    font-size: 2.7rem;
-    margin-bottom: 1rem;
-    user-select: none;
-    align-self: center;
-  }
-  .card h3 {
-    margin-bottom: 0.7rem;
-    color: #004d26;
-  }
-  .card p, .card ul {
-    flex-grow: 1;
-    color: #444;
-    font-weight: 400;
-    font-size: 0.95rem;
-  }
-  .card ul {
-    padding-left: 1.2rem;
-    margin: 0;
-  }
-  .card ul li {
-    margin-bottom: 0.35rem;
-  }
-  .about-section {
-    background: #e6f1e8;
-    border-radius: 15px;
-    padding: 3rem 1.25rem;
-    max-width: 900px;
-    margin-left: auto;
-    margin-right: auto;
-    box-shadow: 0 8px 16px rgb(0 77 38 / 0.15);
-  }
-  .about-content {
+  /* Hero Section */
+  .hero-info {
     max-width: 700px;
-    margin: 0 auto;
-    text-align: center;
-    font-size: 1.05rem;
-    color: #034d1b;
+    margin-bottom: 2rem;
   }
-  .process-section {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 0 1.25rem;
-  }
-  .process-list {
+  /* Trust Badges */
+  .trust-badges {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    gap: 1.75rem;
+    margin: 2rem 0 0 0;
+  }
+  .badge {
+    background: #fff;
+    padding: 1.25rem 1.75rem;
+    box-shadow: 0 2px 8px var(--shadow);
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 1rem;
+    color: var(--secondary-color);
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    min-width: 170px;
+    justify-content: center;
+    user-select: none;
+  }
+  .badge span.icon {
+    font-size: 1.5rem;
+  }
+  /* Services Cards */
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+  .card {
+    background: #fff;
+    border-radius: 12px;
+    padding: 1.75rem 1.75rem 2.25rem 1.75rem;
+    box-shadow: 0 5px 15px var(--shadow);
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+  .card h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 0.75rem;
+  }
+  .card ul {
+    margin: 0;
+    padding-left: 1.25rem;
+    list-style-type: disc;
+    color: #555;
+    font-size: 1rem;
+  }
+  /* About Section */
+  .about-content {
+    max-width: 900px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+    color: #444;
+  }
+  .about-credibility {
+    margin-top: 2rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+  }
+  .credibility-item {
+    background: #fff;
+    box-shadow: 0 4px 12px var(--shadow);
+    border-radius: 12px;
+    padding: 1.5rem 2rem;
+    max-width: 260px;
+    text-align: center;
+    user-select: none;
+  }
+  .credibility-item span.icon {
+    font-size: 2.5rem;
+    color: var(--accent-color);
+    margin-bottom: 0.5rem;
+    display: inline-block;
+  }
+  .credibility-item h4 {
+    margin: 0.25rem 0 0.5rem 0;
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: var(--secondary-color);
+  }
+  .credibility-item p {
+    font-size: 0.95rem;
+    color: #666;
+    margin: 0;
+  }
+  /* Process Section */
+  .process-list {
+    max-width: 900px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(240px,1fr));
     gap: 2rem;
   }
   .process-step {
-    background: white;
-    box-shadow: 0 7px 18px rgb(0 0 0 / 0.08);
-    border-radius: 16px;
-    padding: 2rem 1.5rem 2rem;
-    max-width: 260px;
-    flex: 1 1 200px;
+    background: #fff;
+    border-radius: 14px;
+    padding: 1.75rem 1.75rem 2rem 1.75rem;
+    box-shadow: 0 5px 15px var(--shadow);
     text-align: center;
-    position: relative;
     user-select: none;
+    transition: transform 0.25s ease;
+    cursor: default;
   }
-  .process-step::before {
-    content: attr(data-num);
-    position: absolute;
-    top: -18px;
-    left: 50%;
-    transform: translateX(-50%);
-    background: #007a4d;
-    color: #e6f1e8;
+  .process-step:hover,
+  .process-step:focus-within {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,122,90,0.24);
+  }
+  .process-step span.number {
+    display: inline-block;
+    width: 44px;
+    height: 44px;
+    line-height: 44px;
+    background: var(--primary-color);
+    color: #fff;
     font-weight: 700;
-    font-size: 1.2rem;
-    border-radius: 100%;
-    width: 38px;
-    height: 38px;
-    line-height: 38px;
-    box-shadow: 0 4px 12px rgb(0 122 77 / 0.45);
+    font-size: 1.25rem;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+    user-select: none;
   }
   .process-step h3 {
-    margin-top: 1rem;
-    color: #004d26;
+    font-weight: 700;
+    font-size: 1.15rem;
+    color: var(--secondary-color);
+    margin-bottom: 0.5rem;
   }
   .process-step p {
-    margin-top: 0.7rem;
-    font-weight: 400;
-    color: #333;
-    font-size: 0.95rem;
+    font-size: 1rem;
+    color: #555;
+    margin: 0;
   }
-  .why-choose-section {
-    background: white;
+  /* Why Choose Us */
+  .why-grid {
     max-width: 900px;
     margin: 0 auto;
-    padding: 3rem 1.25rem;
-    box-shadow: 0 10px 24px rgb(0 0 0 / 0.1);
-    border-radius: 16px;
-  }
-  .why-list {
     display: grid;
     grid-template-columns: repeat(auto-fit,minmax(240px,1fr));
-    gap: 1.8rem 2rem;
+    gap: 1.75rem;
   }
   .why-item {
-    background: linear-gradient(135deg, #e6f1e8, #c3ddbf);
-    border-radius: 12px;
-    padding: 1.5rem 1.7rem;
-    box-shadow: inset 0 2px 6px rgb(0 77 38 / 0.15);
-    font-weight: 600;
-    font-size: 1.05rem;
-    color: #14521d;
+    background: #fff;
+    box-shadow: 0 5px 15px var(--shadow);
+    border-radius: 14px;
+    padding: 1.75rem 1.75rem 2rem 1.75rem;
     text-align: center;
     user-select: none;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    min-height: 110px;
   }
-  .why-item span {
+  .why-item span.icon {
     font-size: 2rem;
-    margin-bottom: 0.45rem;
+    margin-bottom: 0.5rem;
+    color: var(--accent-color);
+    display: inline-block;
   }
-  .testimonials-section {
-    background: #f0fbf4;
-    padding: 3rem 1.25rem;
+  .why-item h3 {
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
+    font-size: 1.15rem;
+  }
+  .why-item p {
+    font-size: 1rem;
+    color: #444;
+    margin: 0;
+  }
+  /* Testimonials */
+  .testimonials {
     max-width: 900px;
-    margin: 0 auto 5rem;
-    border-radius: 14px;
-    box-shadow: 0 8px 24px rgb(0 77 38 / 0.12);
+    margin: 0 auto;
   }
-  .testimonial {
-    background: white;
-    padding: 1.75rem 1.5rem 1.75rem;
-    border-radius: 12px;
-    box-shadow: 0 6px 16px rgb(0 0 0 / 0.08);
+  .testimonial-item {
+    background: #fff;
+    border-radius: 14px;
+    padding: 1.75rem 2rem;
+    box-shadow: 0 5px 15px var(--shadow);
     margin-bottom: 1.75rem;
     font-style: italic;
-    color: #20441a;
     position: relative;
-    user-select: none;
+    color: #3a3a3a;
   }
-  .testimonial:last-child {
-    margin-bottom: 0;
-  }
-  .testimonial::before {
+  .testimonial-item::before {
     content: "“";
     font-size: 3rem;
-    line-height: 0;
-    color: #004d26cc;
+    color: var(--accent-color);
     position: absolute;
-    top: 10px;
-    left: 12px;
-    font-weight: 900;
-    user-select: none;
-  }
-  .testimonial-footer {
-    margin-top: 1rem;
+    top: 15px;
+    left: 20px;
+    opacity: 0.15;
     font-style: normal;
-    font-weight: 700;
-    color: #007a4d;
-    text-align: right;
-    font-size: 0.95rem;
   }
-  .service-area-section {
-    max-width: 900px;
-    margin: 0 auto 4.5rem;
-    padding: 0 1.25rem;
+  .testimonial-item p {
+    margin: 0 0 1rem 0;
+    line-height: 1.4;
+  }
+  .testimonial-item footer {
+    font-style: normal;
+    font-weight: 600;
+    color: var(--secondary-color);
+    font-size: 0.95rem;
+    text-align: right;
+  }
+  /* Service Area */
+  .service-area-text {
+    max-width: 800px;
+    margin: 0 auto;
+    font-size: 1.05rem;
+    color: #444;
+    text-align: center;
   }
   .service-area-list {
+    margin-top: 1.5rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
     display: flex;
     flex-wrap: wrap;
-    gap: 0.75rem 1.5rem;
     justify-content: center;
+    gap: 1rem 2rem;
+    color: var(--primary-color);
     font-weight: 600;
-    color: #00582e;
-    font-size: 1.05rem;
-    user-select: none;
+    font-size: 1rem;
   }
   .service-area-list li {
     list-style: none;
-    background: #c3ddbf;
-    padding: 0.45rem 1rem;
-    border-radius: 22px;
-    box-shadow: inset 0 1px 3px rgb(0 77 38 / 0.18);
+    position: relative;
+    padding-left: 1.35rem;
   }
-  .faq-section {
-    max-width: 900px;
-    margin: 0 auto 5rem;
-    padding: 0 1.25rem;
+  .service-area-list li::before {
+    content: "📍";
+    position: absolute;
+    left: 0;
+    top: 0;
+    font-size: 1rem;
+    line-height: 1;
+  }
+  /* FAQ Section */
+  .faq {
+    max-width: 850px;
+    margin: 0 auto;
   }
   .faq-item {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 5px 15px var(--shadow);
     margin-bottom: 1.5rem;
-  }
-  .faq-item:last-child {
-    margin-bottom: 0;
+    padding: 1.5rem 2rem;
   }
   .faq-question {
     font-weight: 600;
+    color: var(--primary-color);
+    margin-bottom: 0.5rem;
     font-size: 1.1rem;
-    color: #004d26;
-    margin-bottom: 0.3rem;
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-  }
-  .faq-question::before {
-    content: "❓";
-    font-size: 1.3rem;
   }
   .faq-answer {
     font-size: 1rem;
-    color: #222;
-    padding-left: 1.25rem;
-    position: relative;
+    color: #444;
+    line-height: 1.5;
   }
-  .faq-answer::before {
-    content: "✔️";
-    position: absolute;
-    left: 0;
-  }
-  .contact-cta-section {
-    background: linear-gradient(135deg, #004d26 0%, #007a4d 100%);
-    color: #e6f1e8;
+  /* Contact CTA */
+  .contact-cta {
+    background: var(--background-gradient);
+    color: #f0f8f5;
     text-align: center;
-    padding: 3.5rem 1.25rem 5rem;
+    padding: 3rem 1.5rem;
     border-radius: 12px;
-    box-shadow: 0 10px 40px rgb(0 77 38 / 0.5);
+    max-width: 900px;
+    margin: 0 auto;
+    user-select: none;
   }
-  .contact-cta-section h2 {
+  .contact-cta h2 {
+    font-weight: 700;
     font-size: 2.2rem;
-    margin-bottom: 1.2rem;
+    margin-bottom: 1rem;
   }
-  .contact-cta-section p {
+  .contact-cta p {
     font-size: 1.15rem;
     margin-bottom: 2rem;
-    font-weight: 500;
   }
-  .contact-cta-section a.phone-link {
-    font-weight: 700;
-    font-size: 1.55rem;
-    background: #e6f1e8;
-    color: #004d26;
-    padding: 1rem 2.8rem;
-    border-radius: 50px;
-    display: inline-block;
-    box-shadow: 0 6px 14px rgb(0 77 38 / 0.45);
-    user-select: none;
-    transition: background-color 0.3s ease, color 0.3s ease;
+  .contact-cta a.btn-primary {
+    font-size: 1.25rem;
+    padding: 1.25rem 3rem;
+    box-shadow: 0 8px 22px rgba(80,200,120,0.5);
   }
-  .contact-cta-section a.phone-link:hover,
-  .contact-cta-section a.phone-link:focus {
-    background: #004d26;
-    color: #e6f1e8;
-    outline: none;
-  }
-  form {
-    max-width: 720px;
-    margin: 2rem auto 0;
-    background: white;
-    padding: 2rem 2.5rem 2.5rem;
-    border-radius: 14px;
-    box-shadow: 0 8px 26px rgb(0 0 0 / 0.09);
-  }
-  form label {
-    display: block;
-    font-weight: 600;
-    margin-bottom: 0.35rem;
-    color: #004d26;
-    user-select: none;
-  }
-  form input, form select {
-    width: 100%;
-    padding: 0.55rem 0.8rem;
-    margin-bottom: 1.5rem;
-    border-radius: 8px;
-    border: 1.8px solid #a6bfa0;
-    font-size: 1rem;
-    font-family: 'Montserrat', sans-serif;
-    outline-offset: 2px;
-    transition: border-color 0.3s ease;
-  }
-  form input:focus,
-  form select:focus {
-    border-color: #007a4d;
-    outline: none;
-  }
-  form button {
-    background: #007a4d;
-    color: #e6f1e8;
-    font-weight: 700;
-    font-size: 1.15rem;
-    border: none;
-    padding: 0.95rem 0;
-    width: 100%;
-    border-radius: 50px;
-    cursor: pointer;
-    box-shadow: 0 6px 18px rgb(0 122 77 / 0.4);
-    transition: background-color 0.3s ease;
-    text-transform: uppercase;
-    letter-spacing: 0.07em;
-  }
-  form button:hover,
-  form button:focus {
-    background: #004d26;
-    outline: none;
-  }
+  /* Footer */
   footer {
+    background: #0d3c27;
+    color: #88cda2cc;
     text-align: center;
-    padding: 2.3rem 1rem 3rem;
     font-size: 0.9rem;
-    color: #666;
+    padding: 1rem 1rem 2rem 1rem;
     user-select: none;
   }
-  .sticky-call {
+  /* Sticky Call Button */
+  .call-button {
     position: fixed;
-    bottom: 12px;
-    right: 15px;
-    background: #007a4d;
+    right: 1.25rem;
+    bottom: 1.25rem;
+    background: var(--accent-color);
+    color: #fff;
     border-radius: 50%;
-    width: 52px;
-    height: 52px;
-    box-shadow: 0 7px 18px rgb(0 122 77 / 0.6);
+    width: 58px;
+    height: 58px;
+    box-shadow: 0 10px 25px rgba(80,200,120,0.6);
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+    font-size: 1.75rem;
     z-index: 9999;
-    cursor: pointer;
+    user-select: none;
     transition: background-color 0.3s ease;
   }
-  .sticky-call:hover,
-  .sticky-call:focus {
-    background: #004d26;
-    outline: none;
+  .call-button:hover,
+  .call-button:focus {
+    background: #3cb763;
   }
-  .sticky-call a {
-    color: #e6f1e8;
-    font-size: 1.8rem;
-    text-decoration: none;
-    user-select: none;
+  .call-button:focus {
+    outline: 3px solid #b3f1b2;
+    outline-offset: 2px;
   }
-  @media (max-width: 480px) {
-    h1 {
-      font-size: 2.25rem;
+  /* Responsive typography */
+  @media (min-width: 640px) {
+    header h1 {
+      font-size: 3.5rem;
     }
-    .hero h2 {
-      font-size: 1.1rem;
+    header p.lead {
+      font-size: 1.375rem;
     }
-    .btn-primary {
-      padding: 0.8rem 1.85rem;
-      font-size: 0.95rem;
-    }
-    .contact-cta-section h2 {
-      font-size: 1.8rem;
-    }
-    .contact-cta-section a.phone-link {
-      font-size: 1.3rem;
-      padding: 0.85rem 2rem;
+  }
+  @media (min-width: 900px) {
+    section {
+      padding: 5rem 1.5rem 5rem 1.5rem;
     }
   }
 </style>
 </head>
 <body>
-
-<header class="hero" role="banner">
-  <div class="container" tabindex="-1">
-    <h1>FlowFix Plumbing</h1>
-    <h2>Reliable Local Plumbing Services in Your Suburb/Region, Australia</h2>
-    <p>Fast, Expert Plumbing Solutions When You Need Them Most</p>
-    <p>At FlowFix Plumbing, we understand that plumbing problems can strike at the worst moments. A burst pipe, blocked drain, or leaking tap disrupts your day and risks costly property damage. That’s why our team of licensed local plumbers is committed to fast, friendly, and affordable service — restoring your peace of mind without delay.</p>
-    <button class="btn-primary" onclick="document.getElementById('contact-form').scrollIntoView({behavior:'smooth'})" aria-label="Request a free quote - scroll to contact form">Request a Free Quote</button>
+<header role="banner" aria-label="Hero section">
+  <div class="container">
+    <h1>FlowFix Plumbing – Your Trusted Local Plumber in Sydney</h1>
+    <p class="lead">Fast, Reliable Plumbing Services When You Need Them Most</p>
+    <p>At FlowFix Plumbing, we understand how stressful plumbing problems can be. Whether it’s a burst pipe flooding your home or a slow-draining sink disrupting your day, you need a trusted plumber who responds fast and delivers quality work—every time.</p>
+    <p>Based in Sydney, FlowFix Plumbing offers expert plumbing solutions tailored to meet the needs of homeowners and businesses across the area. Our experienced team uses the latest equipment and proven techniques to fix your plumbing issues quickly and efficiently, saving you time, money, and stress.</p>
+    <div class="trust-badges" role="list" aria-label="Our trust and credibility badges">
+      <div class="badge" role="listitem"><span class="icon" aria-hidden="true">⏱️</span> Local &amp; Rapid Response</div>
+      <div class="badge" role="listitem"><span class="icon" aria-hidden="true">✅</span> Licensed &amp; Insured</div>
+      <div class="badge" role="listitem"><span class="icon" aria-hidden="true">💵</span> Transparent Pricing</div>
+      <div class="badge" role="listitem"><span class="icon" aria-hidden="true">🛠️</span> Quality Guarantee</div>
+      <div class="badge" role="listitem"><span class="icon" aria-hidden="true">🤝</span> Customer-Focused</div>
+    </div>
   </div>
 </header>
 
-<section aria-labelledby="trust-title">
-  <h2 id="trust-title">Why Choose FlowFix Plumbing?</h2>
-  <div class="trust-section" role="list">
-    <div class="trust-badge" role="listitem" aria-label="Trusted Local Experts - Over 10 years experience">
-      <span>🏅</span> Trusted Local Experts<br>Over 10 years experience
-    </div>
-    <div class="trust-badge" role="listitem" aria-label="24/7 Emergency Response">
-      <span>⏰</span> 24/7 Emergency <br>Response
-    </div>
-    <div class="trust-badge" role="listitem" aria-label="Upfront Pricing - No hidden fees">
-      <span>💰</span> Upfront Pricing<br>No hidden fees
-    </div>
-    <div class="trust-badge" role="listitem" aria-label="Quality Workmanship Guaranteed">
-      <span>🔧</span> Quality Workmanship<br>Guaranteed
-    </div>
-    <div class="trust-badge" role="listitem" aria-label="Customer Satisfaction Focused">
-      <span>👍</span> Customer Satisfaction<br>Focused
-    </div>
-  </div>
-</section>
-
-<section aria-labelledby="services-title" class="container">
-  <h2 id="services-title">We Fix Your Plumbing Problems Fast</h2>
-  <div class="service-cards">
-    <article class="card" tabindex="0" aria-label="Emergency Plumbing Repairs including burst pipes, leaks, and blockages">
-      <div class="card-icon" aria-hidden="true">🚨</div>
-      <h3>Emergency Plumbing Repairs</h3>
-      <p>Burst pipes, leaks, blockages solved fast with expert precision.</p>
-    </article>
-    <article class="card" tabindex="0" aria-label="Drain Cleaning and Unblocking services">
-      <div class="card-icon" aria-hidden="true">🚿</div>
-      <h3>Drain Cleaning &amp; Unblocking</h3>
-      <p>Efficient drain clearing to restore proper flow and prevent damage.</p>
-    </article>
-    <article class="card" tabindex="0" aria-label="Hot Water System Installation and Repair">
-      <div class="card-icon" aria-hidden="true">🔥</div>
-      <h3>Hot Water System Installation &amp; Repair</h3>
-      <p>Reliable hot water solutions for your home or business.</p>
-    </article>
-    <article class="card" tabindex="0" aria-label="Toilet Repairs and Replacements">
-      <div class="card-icon" aria-hidden="true">🚽</div>
-      <h3>Toilet Repairs &amp; Replacements</h3>
-      <p>Fixing and upgrading toilets promptly to avoid inconvenience.</p>
-    </article>
-    <article class="card" tabindex="0" aria-label="Tap and Faucet Repairs">
-      <div class="card-icon" aria-hidden="true">🔧</div>
-      <h3>Tap &amp; Faucet Repairs</h3>
-      <p>Leak-free taps and faucets for efficiency and comfort.</p>
-    </article>
-    <article class="card" tabindex="0" aria-label="Professional Gas Fitting Services">
-      <div class="card-icon" aria-hidden="true">🛠️</div>
-      <h3>Gas Fitting Services</h3>
-      <p>Certified gas fitting for safety and compliance.</p>
-    </article>
-    <article class="card" tabindex="0" aria-label="Roof and Gutter Plumbing">
-      <div class="card-icon" aria-hidden="true">🏠</div>
-      <h3>Roof &amp; Gutter Plumbing</h3>
-      <p>Prevent leaks and water damage with expert roof plumbing.</p>
-    </article>
-    <article class="card" tabindex="0" aria-label="Pipe Relining and Replacement Services">
-      <div class="card-icon" aria-hidden="true">🔩</div>
-      <h3>Pipe Relining &amp; Replacement</h3>
-      <p>Long-lasting solutions to damaged and corroded pipes.</p>
-    </article>
-    <article class="card" tabindex="0" aria-label="Bathroom and Kitchen Plumbing Upgrades">
-      <div class="card-icon" aria-hidden="true">🛁</div>
-      <h3>Bathroom &amp; Kitchen Plumbing Upgrades</h3>
-      <p>Enhance your home with professional plumbing renovations.</p>
-    </article>
-  </div>
-</section>
-
-<section aria-labelledby="emergency-title" class="container">
-  <h2 id="emergency-title">Emergency Plumbing? We’re On Call 24/7</h2>
-  <p>Plumbing disasters don’t keep office hours — but we do. Whenever water starts flowing where it shouldn’t or your hot water fails, call FlowFix Plumbing for immediate, reliable help. Local and ready to respond fast to prevent damage and restore functionality.</p>
-  <p><strong>Call us anytime at <a href="tel:+61299998888" aria-label="Call FlowFix Plumbing now">02 9999 8888</a> for emergency service 24/7.</strong></p>
-</section>
-
-<section aria-labelledby="service-area-title" class="service-area-section">
-  <h2 id="service-area-title">Proudly Serving Your Suburb and Surrounding Areas</h2>
-  <ul class="service-area-list" role="list" aria-label="Service Areas">
-    <li>Suburb 1</li>
-    <li>Suburb 2</li>
-    <li>Suburb 3</li>
-    <li>Surrounding neighborhoods throughout Region</li>
-  </ul>
-  <p style="text-align:center; margin-top:1rem; font-style: italic; color:#00582e; font-weight:600;">No matter where you are in Region, FlowFix Plumbing is your go-to local plumber.</p>
-</section>
-
-<section aria-labelledby="about-title" class="about-section" tabindex="0">
-  <h2 id="about-title">About FlowFix Plumbing</h2>
-  <div class="about-content">
-    <p>Serving Your Suburb/Region for over a decade, FlowFix Plumbing is a fully licensed and insured local business dedicated to delivering quality workmanship with integrity and care. Our experienced plumbers undertake each job with precision, ensuring high standards of safety and customer satisfaction. We pride ourselves on clear communication, reliable pricing, and timely service, making us the trusted choice for all your plumbing needs.</p>
-  </div>
-</section>
-
-<section aria-labelledby="process-title" class="process-section" tabindex="0">
-  <h2 id="process-title">How It Works</h2>
-  <div class="process-list">
-    <div class="process-step" data-num="1" tabindex="0" aria-label="Step 1: Contact FlowFix Plumbing">
-      <h3>Contact Us</h3>
-      <p>Easy 24/7 phone or online contact for emergency or scheduled service.</p>
-    </div>
-    <div class="process-step" data-num="2" tabindex="0" aria-label="Step 2: Transparent Quotation">
-      <h3>Get a Quote</h3>
-      <p>We provide an upfront, competitive written quote before any work begins.</p>
-    </div>
-    <div class="process-step" data-num="3" tabindex="0" aria-label="Step 3: Expert Service">
-      <h3>Work Commencement</h3>
-      <p>Licensed plumbers arrive on time, equipped, and ready to work with excellence.</p>
-    </div>
-    <div class="process-step" data-num="4" tabindex="0" aria-label="Step 4: Satisfaction Guarantee">
-      <h3>Job Completion</h3>
-      <p>We clean up, test all work, and ensure you’re completely satisfied.</p>
+<main>
+<section aria-labelledby="services-title">
+  <div class="container">
+    <h2 id="services-title" class="section-title">We Solve Plumbing Problems Like:</h2>
+    <div class="services-grid" role="list">
+      <article class="card" role="listitem" tabindex="0">
+        <h3>Burst Pipes &amp; Leaks</h3>
+        <ul>
+          <li>Burst pipes and pipe leaks</li>
+          <li>Water damage prevention</li>
+          <li>Emergency shut-off and repair</li>
+        </ul>
+      </article>
+      <article class="card" role="listitem" tabindex="0">
+        <h3>Blocked Drains &amp; Toilets</h3>
+        <ul>
+          <li>Drain clearing and unblocking</li>
+          <li>Toilet repairs and replacements</li>
+          <li>High-pressure water jetting</li>
+        </ul>
+      </article>
+      <article class="card" role="listitem" tabindex="0">
+        <h3>Hot Water Systems</h3>
+        <ul>
+          <li>Installation of new systems</li>
+          <li>Repairs and maintenance</li>
+          <li>Energy-efficient upgrades</li>
+        </ul>
+      </article>
+      <article class="card" role="listitem" tabindex="0">
+        <h3>Taps &amp; Faucets</h3>
+        <ul>
+          <li>Repairs or replacements</li>
+          <li>Kitchen and bathroom taps</li>
+          <li>Leaking and dripping fixes</li>
+        </ul>
+      </article>
+      <article class="card" role="listitem" tabindex="0">
+        <h3>Sewer Line Services</h3>
+        <ul>
+          <li>Inspections and repairs</li>
+          <li>Pipe relining</li>
+          <li>Preventative maintenance</li>
+        </ul>
+      </article>
+      <article class="card" role="listitem" tabindex="0">
+        <h3>Gas Fitting &amp; Appliances</h3>
+        <ul>
+          <li>Gas fitting &amp; safety checks</li>
+          <li>Appliance installations</li>
+          <li>Compliance &amp; certification</li>
+        </ul>
+      </article>
+      <article class="card" role="listitem" tabindex="0">
+        <h3>Renovations</h3>
+        <ul>
+          <li>Bathroom renovations</li>
+          <li>Kitchen plumbing</li>
+          <li>Stylistic &amp; functional upgrades</li>
+        </ul>
+      </article>
+      <article class="card" role="listitem" tabindex="0">
+        <h3>Maintenance &amp; Inspections</h3>
+        <ul>
+          <li>Routine plumbing maintenance</li>
+          <li>Leak detection &amp; testing</li>
+          <li>System hygiene &amp; safety</li>
+        </ul>
+      </article>
     </div>
   </div>
 </section>
 
-<section aria-labelledby="why-choose-title" class="why-choose-section" tabindex="0">
-  <h2 id="why-choose-title">Why Choose Us?</h2>
-  <div class="why-list" role="list">
-    <div class="why-item" role="listitem"><span>✅</span> Licensed &amp; Insured</div>
-    <div class="why-item" role="listitem"><span>✅</span> 24/7 Emergency Service</div>
-    <div class="why-item" role="listitem"><span>✅</span> Transparent Upfront Pricing</div>
-    <div class="why-item" role="listitem"><span>✅</span> Experienced Local Plumbers</div>
-    <div class="why-item" role="listitem"><span>✅</span> Satisfaction Guarantee</div>
-    <div class="why-item" role="listitem"><span>✅</span> Clean &amp; Professional</div>
+<section aria-labelledby="emergency-title" class="container" style="max-width:700px; margin-bottom:4rem; text-align:center;">
+  <h2 id="emergency-title" class="section-title">Emergency Plumbing Services Available 24/7</h2>
+  <p style="font-size:1.125rem; color:#222;">Plumbing emergencies don’t wait for business hours. That’s why FlowFix Plumbing offers 24/7 emergency services. When you call us at any time, day or night, we prioritize fast response and effective solutions to minimize water damage and get your property back to normal.</p>
+</section>
+
+<section aria-labelledby="about-title">
+  <div class="container">
+    <h2 id="about-title" class="section-title">About FlowFix Plumbing</h2>
+    <div class="about-content">
+      <p>FlowFix Plumbing is proud to be Sydney’s reliable, fully licensed, and insured plumbing company. With over 15 years of industry experience, our certified technicians provide long-lasting, quality plumbing repairs and installations. We are committed to clear communication, transparent pricing, and professional workmanship at every stage.</p>
+      <p>Our team undergoes continual training ensuring we bring the latest plumbing techniques and safety standards to every job. We back all our work with trusted warranties and we’re driven by a passion to serve our local community.</p>
+    </div>
+    <div class="about-credibility" role="list" aria-label="Our credentials and certifications">
+      <section class="credibility-item" role="listitem" tabindex="0">
+        <span class="icon" aria-hidden="true">🏅</span>
+        <h4>Licensed &amp; Certified</h4>
+        <p>All plumbers licensed by NSW Fair Trading, fully insured and compliant.</p>
+      </section>
+      <section class="credibility-item" role="listitem" tabindex="0">
+        <span class="icon" aria-hidden="true">📅</span>
+        <h4>15+ Years Experience</h4>
+        <p>Trusted by thousands of Sydney households and businesses since 2008.</p>
+      </section>
+      <section class="credibility-item" role="listitem" tabindex="0">
+        <span class="icon" aria-hidden="true">💬</span>
+        <h4>Customer Rated 4.9/5</h4>
+        <p>Our priority is respectful, clear communication and customer satisfaction.</p>
+      </section>
+      <section class="credibility-item" role="listitem" tabindex="0">
+        <span class="icon" aria-hidden="true">🔧</span>
+        <h4>Quality Workmanship</h4>
+        <p>Solid warranties on labour and parts to secure your peace of mind.</p>
+      </section>
+    </div>
   </div>
 </section>
 
-<section aria-labelledby="testimonials-title" class="testimonials-section" tabindex="0">
-  <h2 id="testimonials-title">What Our Customers Say</h2>
-  <div class="testimonial" tabindex="0">
-    <p>FlowFix Plumbing saved us during a burst pipe emergency in the middle of the night. Fast, professional, and affordable — we couldn’t recommend them enough!</p>
-    <div class="testimonial-footer">— Sarah J., Suburb</div>
-  </div>
-  <div class="testimonial" tabindex="0">
-    <p>Friendly service with clear pricing and excellent workmanship. The team fixed my blocked drain quickly and left everything clean.</p>
-    <div class="testimonial-footer">— Mark D., Suburb</div>
-  </div>
-  <div class="testimonial" tabindex="0">
-    <p>Highly reliable, polite, and knowledgeable plumbers. They explained everything clearly and did a fantastic job upgrading our kitchen plumbing.</p>
-    <div class="testimonial-footer">— Emily R., Suburb</div>
-  </div>
-</section>
-
-<section aria-labelledby="faq-title" class="faq-section" tabindex="0">
-  <h2 id="faq-title">Frequently Asked Questions</h2>
-  <div class="faq-item" tabindex="0">
-    <div class="faq-question">Are you licensed and insured?</div>
-    <div class="faq-answer">Yes, FlowFix Plumbing is fully licensed and insured for all plumbing work in Your Region.</div>
-  </div>
-  <div class="faq-item" tabindex="0">
-    <div class="faq-question">How quickly can you respond to emergency plumbing calls?</div>
-    <div class="faq-answer">We offer 24/7 emergency service with response times typically under 1 hour within our local service area.</div>
-  </div>
-  <div class="faq-item" tabindex="0">
-    <div class="faq-question">Do you provide upfront quotes?</div>
-    <div class="faq-answer">Absolutely. Before starting any work, we provide a transparent written quote so there are no surprises.</div>
-  </div>
-  <div class="faq-item" tabindex="0">
-    <div class="faq-question">What payment methods do you accept?</div>
-    <div class="faq-answer">We accept cash, credit/debit cards, and electronic bank transfers.</div>
-  </div>
-  <div class="faq-item" tabindex="0">
-    <div class="faq-question">Can you help with renovating my bathroom or kitchen plumbing?</div>
-    <div class="faq-answer">Yes, we offer comprehensive plumbing upgrades and installations for renovations and new builds.</div>
+<section aria-labelledby="process-title">
+  <div class="container">
+    <h2 id="process-title" class="section-title">How It Works</h2>
+    <div class="process-list">
+      <article class="process-step" tabindex="0">
+        <span class="number" aria-label="Step 1">1</span>
+        <h3>Contact Us</h3>
+        <p>Call or book online with your plumbing issue; 24/7 emergency hotline available.</p>
+      </article>
+      <article class="process-step" tabindex="0">
+        <span class="number" aria-label="Step 2">2</span>
+        <h3>Rapid Response</h3>
+        <p>Our local plumber arrives promptly, assesses the problem, and provides a clear quote.</p>
+      </article>
+      <article class="process-step" tabindex="0">
+        <span class="number" aria-label="Step 3">3</span>
+        <h3>Expert Repairs</h3>
+        <p>We efficiently fix your plumbing issue using quality parts and professional methods.</p>
+      </article>
+      <article class="process-step" tabindex="0">
+        <span class="number" aria-label="Step 4">4</span>
+        <h3>Follow-up &amp; Warranty</h3>
+        <p>We ensure you’re satisfied and back our work with reliable warranties on labour and parts.</p>
+      </article>
+    </div>
   </div>
 </section>
 
-<section aria-labelledby="contact-title" class="container contact-cta-section" tabindex="0">
-  <h2 id="contact-title">Ready for Fast, Reliable Plumbing Service?</h2>
-  <p>Don’t let plumbing problems disrupt your life any longer. Contact FlowFix Plumbing today for expert assistance and swift, affordable solutions.</p>
-  <a href="tel:+61299998888" class="phone-link" aria-label="Call FlowFix Plumbing now at 02 9999 8888">Call us now at 02 9999 8888 — Available 24/7!</a>
-
-  <form id="contact-form" aria-label="Request a free quote online form" novalidate>
-    <label for="name">Name</label>
-    <input id="name" name="name" type="text" required placeholder="Your full name" autocomplete="name" />
-
-    <label for="phone">Phone</label>
-    <input id="phone" name="phone" type="tel" pattern="[\d\s()+-]+" required placeholder="e.g. 0412 345 678" autocomplete="tel" />
-
-    <label for="email">Email</label>
-    <input id="email" name="email" type="email" required placeholder="example@mail.com" autocomplete="email" />
-
-    <label for="service">Service Required</label>
-    <select id="service" name="service" required>
-      <option value="" disabled selected>Select a service</option>
-      <option>Emergency Plumbing Repairs</option>
-      <option>Drain Cleaning & Unblocking</option>
-      <option>Hot Water System Installation & Repair</option>
-      <option>Toilet Repairs & Replacements</option>
-      <option>Tap & Faucet Repairs</option>
-      <option>Gas Fitting Services</option>
-      <option>Roof & Gutter Plumbing</option>
-      <option>Pipe Relining & Replacement</option>
-      <option>Bathroom & Kitchen Plumbing Upgrades</option>
-      <option>Other / Advice</option>
-    </select>
-
-    <label for="contact-time">Preferred Contact Time</label>
-    <select id="contact-time" name="contact-time" required>
-      <option value="" disabled selected>Select a time</option>
-      <option>Morning (8am - 12pm)</option>
-      <option>Afternoon (12pm - 5pm)</option>
-      <option>Evening (5pm - 9pm)</option>
-      <option>Anytime</option>
-    </select>
-
-    <button type="submit" aria-label="Submit request form for free quote">Submit Request</button>
-  </form>
+<section aria-labelledby="why-title">
+  <div class="container">
+    <h2 id="why-title" class="section-title">Why Choose FlowFix Plumbing?</h2>
+    <div class="why-grid" role="list">
+      <article class="why-item" role="listitem" tabindex="0">
+        <span class="icon" aria-hidden="true">🚿</span>
+        <h3>Comprehensive Services</h3>
+        <p>From emergencies to renovations, we handle diverse plumbing needs with expertise.</p>
+      </article>
+      <article class="why-item" role="listitem" tabindex="0">
+        <span class="icon" aria-hidden="true">⏳</span>
+        <h3>Fast &amp; Reliable</h3>
+        <p>We value your time and act quickly without compromising quality in every job.</p>
+      </article>
+      <article class="why-item" role="listitem" tabindex="0">
+        <span class="icon" aria-hidden="true">🔒</span>
+        <h3>Licensed &amp; Insured</h3>
+        <p>Full certification and insurance protect your property and give you peace of mind.</p>
+      </article>
+      <article class="why-item" role="listitem" tabindex="0">
+        <span class="icon" aria-hidden="true">💬</span>
+        <h3>Clear Pricing</h3>
+        <p>No hidden fees. Transparent quotes before work begins are a promise.</p>
+      </article>
+      <article class="why-item" role="listitem" tabindex="0">
+        <span class="icon" aria-hidden="true">👍</span>
+        <h3>Customer Focused</h3>
+        <p>Respectful, honest service with clear communication from start to finish.</p>
+      </article>
+      <article class="why-item" role="listitem" tabindex="0">
+        <span class="icon" aria-hidden="true">🛡️</span>
+        <h3>Quality Guarantee</h3>
+        <p>We stand behind all workmanship with solid warranties and ongoing support.</p>
+      </article>
+    </div>
+  </div>
 </section>
+
+<section aria-labelledby="testimonials-title">
+  <div class="container testimonials">
+    <h2 id="testimonials-title" class="section-title">What Our Customers Say</h2>
+    <article class="testimonial-item" tabindex="0">
+      <p>"FlowFix Plumbing came within 45 minutes when my pipe burst. Professional, friendly, and fixed the leak quickly. Highly recommended!"</p>
+      <footer>– Sarah T., Sydney</footer>
+    </article>
+    <article class="testimonial-item" tabindex="0">
+      <p>"They installed a new hot water system for our home. The team was knowledgeable and gave us a great upfront price. Fantastic experience."</p>
+      <footer>– John D., Sydney</footer>
+    </article>
+    <article class="testimonial-item" tabindex="0">
+      <p>"Excellent customer service and clear communication throughout our bathroom renovation plumbing. The quality was outstanding."</p>
+      <footer>– Emily S., Mosman</footer>
+    </article>
+  </div>
+</section>
+
+<section aria-labelledby="service-area-title">
+  <div class="container">
+    <h2 id="service-area-title" class="section-title">Proudly Serving Sydney and Surrounding Suburbs</h2>
+    <p class="service-area-text">Whether you’re in Parramatta, North Sydney, Bondi, or nearby suburbs, FlowFix Plumbing is your neighbourhood plumbing expert ready to help with any issue—big or small.</p>
+    <ul class="service-area-list" role="list">
+      <li>Parramatta</li>
+      <li>North Sydney</li>
+      <li>Bondi</li>
+      <li>Chatswood</li>
+      <li>Manly</li>
+      <li>Newtown</li>
+      <li>Ryde</li>
+      <li>Suburbs Nearby</li>
+    </ul>
+  </div>
+</section>
+
+<section aria-labelledby="faq-title">
+  <div class="container faq">
+    <h2 id="faq-title" class="section-title">Frequently Asked Questions (FAQs)</h2>
+    <article class="faq-item" tabindex="0">
+      <div class="faq-question">Q: How quickly can you attend to a plumbing emergency?</div>
+      <div class="faq-answer">A: We offer 24/7 emergency services and typically arrive within 60 minutes for urgent calls in Sydney.</div>
+    </article>
+    <article class="faq-item" tabindex="0">
+      <div class="faq-question">Q: Are your plumbers licensed and insured?</div>
+      <div class="faq-answer">A: Absolutely. All FlowFix Plumbing technicians are fully licensed, insured, and undergo ongoing training.</div>
+    </article>
+    <article class="faq-item" tabindex="0">
+      <div class="faq-question">Q: Do you provide upfront quotes?</div>
+      <div class="faq-answer">A: Yes, we always provide clear, no-obligation quotes before starting any work.</div>
+    </article>
+    <article class="faq-item" tabindex="0">
+      <div class="faq-question">Q: Can you assist with renovations or just repairs?</div>
+      <div class="faq-answer">A: We handle both—you can count on us for renovations, installations, and all types of repair work.</div>
+    </article>
+    <article class="faq-item" tabindex="0">
+      <div class="faq-question">Q: What payment methods do you accept?</div>
+      <div class="faq-answer">A: We accept cash, credit/debit cards, and major electronic payments for your convenience.</div>
+    </article>
+  </div>
+</section>
+
+<section aria-labelledby="contact-title" class="contact-cta">
+  <h2 id="contact-title">Ready to Fix Your Plumbing Problem Today?</h2>
+  <p>Don’t let plumbing issues disrupt your life. Contact FlowFix Plumbing now for fast, expert service from your local trusted plumbers.</p>
+  <p><strong>Call us at <a href="tel:+61298765432" style="color:#e6f7e9; font-weight:700; text-decoration:underline;">(02) 9876 5432</a> or fill out our online booking form for a free quote!</strong></p>
+  <a href="tel:+61298765432" class="btn-primary" aria-label="Call FlowFix Plumbing now">(02) 9876 5432 📞</a>
+</section>
+</main>
 
 <footer>
-  FlowFix Plumbing | Your Trusted Local Plumbers in Your Suburb/Region · Licensed. Insured. Always On Time.<br />
-  <small>123 Greenway Rd, Your Suburb, NSW 2000 | Phone: 02 9999 8888 | Email: contact@flowfixplumbing.au</small>
+  <p>© 2024 FlowFix Plumbing — Quality Plumbing Solutions — Fast Response — Local Service</p>
+  <p>Address: 123 Green Lane, Sydney NSW 2000 | Email: info@flowfixplumbing.com.au | Phone: (02) 9876 5432</p>
 </footer>
 
-<div class="sticky-call" role="button" aria-label="Call FlowFix Plumbing phone" tabindex="0" onclick="window.location.href='tel:+61299998888'" onkeypress="if(event.key==='Enter'){window.location.href='tel:+61299998888'}">
-  <a href="tel:+61299998888" aria-hidden="true">📞</a>
-</div>
-
-<script>
-  // Basic client-side validation and form success simulation
-  const form = document.getElementById('contact-form');
-  form.addEventListener('submit', e => {
-    e.preventDefault();
-    if (form.checkValidity()) {
-      alert('Thank you for your enquiry! We will contact you shortly.');
-      form.reset();
-    } else {
-      form.reportValidity();
-    }
-  });
-</script>
+<a href="tel:+61298765432" class="call-button" aria-label="Call FlowFix Plumbing">(📞)</a>
 
 </body>
 </html>
