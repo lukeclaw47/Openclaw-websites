@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Luke’s Electrical</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    color: #222;
+    margin: 0;
+    background-color: #f9f9f9;
+  }
+  header {
+    background-color: #00457c;
+    color: white;
+    padding: 60px 20px 40px;
+    text-align: center;
+  }
+  header h1 {
+    margin: 0;
+    font-size: 2.5em;
+    line-height: 1.2;
+  }
+  header p {
+    margin-top: 0.5em;
+    font-size: 1.25em;
+    font-weight: 300;
+  }
+  .cta-button {
+    display: inline-block;
+    margin-top: 1.8em;
+    background-color: #ff6f00;
+    color: white;
+    font-weight: bold;
+    padding: 14px 32px;
+    font-size: 1.1em;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+  }
+  .cta-button:hover,
+  .cta-button:focus {
+    background-color: #e65a00;
+    outline: none;
+  }
+  main {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 0 20px 60px;
+  }
+  section {
+    margin-bottom: 50px;
+  }
+  section h2 {
+    color: #00457c;
+    font-size: 1.8em;
+    border-bottom: 3px solid #ff6f00;
+    padding-bottom: 6px;
+    margin-bottom: 16px;
+  }
+  ul.services-list,
+  ul.why-list {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+  }
+  ul.services-list li,
+  ul.why-list li {
+    background: url('data:image/svg+xml;utf8,<svg fill="%23004A73" height="16" viewBox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg"><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg>') no-repeat left center;
+    background-size: 16px 16px;
+    padding-left: 26px;
+    margin-bottom: 10px;
+    font-size: 1.1em;
+  }
+  p {
+    line-height: 1.6;
+    font-size: 1.1em;
+  }
+  address {
+    font-style: normal;
+    font-size: 1.1em;
+    line-height: 1.5;
+  }
+  form {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 24px 20px 20px;
+    border-radius: 6px;
+    max-width: 480px;
+  }
+  form label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+    margin-top: 15px;
+  }
+  form input[type="text"],
+  form input[type="email"],
+  form input[type="tel"],
+  form select,
+  form textarea {
+    width: 100%;
+    padding: 8px 10px;
+    border: 1px solid #bbb;
+    border-radius: 4px;
+    font-size: 1em;
+    font-family: inherit;
+    resize: vertical;
+  }
+  form textarea {
+    min-height: 80px;
+  }
+  form button {
+    margin-top: 20px;
+    background-color: #00457c;
+    color: white;
+    font-weight: 600;
+    padding: 12px 26px;
+    font-size: 1.1em;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  form button:hover,
+  form button:focus {
+    background-color: #002e4d;
+    outline: none;
+  }
+  footer {
+    text-align: center;
+    color: #666;
+    font-size: 0.9em;
+    padding: 20px 10px;
+    border-top: 1px solid #ccc;
+    background-color: #f4f4f4;
+  }
+</style>
+</head>
+<body>
+<header role="banner">
+  <h1>Powering Your Home and Business with Reliable Electrical Solutions</h1>
+  <p>Fast, professional electrical services you can count on.</p>
+  <a href="#contact" class="cta-button" role="button">Schedule Your Free Electrical Estimate Today</a>
+</header>
+<main role="main">
+  <section id="services" aria-labelledby="services-title">
+    <h2 id="services-title">Our Services</h2>
+    <ul class="services-list">
+      <li>Electrical Repairs &amp; Troubleshooting</li>
+      <li>New Electrical Installations</li>
+      <li>Lighting Installation &amp; Upgrades</li>
+      <li>Safety Inspections &amp; Code Compliance</li>
+      <li>Panel Upgrades &amp; Circuit Breaker Replacement</li>
+      <li>Emergency Electrical Services</li>
+    </ul>
+  </section>
+  <section id="about" aria-labelledby="about-title">
+    <h2 id="about-title">About Luke’s Electrical</h2>
+    <p>At Luke’s Electrical, we pride ourselves on delivering expert electrical services with a personal touch. Luke, a licensed electrician with over 10 years of experience, leads a team committed to safety, quality, and customer satisfaction. We are fully licensed and insured, ensuring peace of mind with every job.</p>
+  </section>
+  <section id="why" aria-labelledby="why-title">
+    <h2 id="why-title">Why Choose Us</h2>
+    <ul class="why-list">
+      <li>Local, Trusted Professionals</li>
+      <li>Licensed &amp; Insured Electricians</li>
+      <li>Transparent Pricing with Free Estimates</li>
+      <li>Prompt and Reliable Service</li>
+      <li>Quality Workmanship Guaranteed</li>
+      <li>Emergency Services Available 24/7</li>
+    </ul>
+  </section>
+  <section id="contact" aria-labelledby="contact-title">
+    <h2 id="contact-title">Contact Luke’s Electrical</h2>
+    <address>
+      Phone: <a href="tel:+15551234567">(555) 123-4567</a><br />
+      Email: <a href="mailto:contact@lukeselectrical.com">contact@lukeselectrical.com</a><br />
+      Address: 123 Main Street, Your Town, ST 12345
+    </address>
+    <p>Request a free estimate or call for emergency service anytime!</p>
+    <form action="#" method="post" aria-label="Contact form for Luke’s Electrical">
+      <label for="name">Name</label>
+      <input type="text" id="name" name="name" required placeholder="Your full name" />
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required placeholder="you@example.com" />
+      <label for="phone">Phone</label>
+      <input type="tel" id="phone" name="phone" placeholder="(555) 123-4567" />
+      <label for="service">Service Needed</label>
+      <select id="service" name="service" required>
+        <option value="" disabled selected>Select a service</option>
+        <option value="Electrical Repairs & Troubleshooting">Electrical Repairs & Troubleshooting</option>
+        <option value="New Electrical Installations">New Electrical Installations</option>
+        <option value="Lighting Installation & Upgrades">Lighting Installation & Upgrades</option>
+        <option value="Safety Inspections & Code Compliance">Safety Inspections & Code Compliance</option>
+        <option value="Panel Upgrades & Circuit Breaker Replacement">Panel Upgrades & Circuit Breaker Replacement</option>
+        <option value="Emergency Electrical Services">Emergency Electrical Services</option>
+        <option value="Other">Other</option>
+      </select>
+      <label for="message">Message</label>
+      <textarea id="message" name="message" placeholder="Your message or questions here"></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </section>
+</main>
+<footer role="contentinfo">
+  &copy; 2024 Luke’s Electrical. All rights reserved.
+</footer>
+</body>
+</html>
