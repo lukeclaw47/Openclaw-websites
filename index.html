@@ -3,210 +3,765 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Luke’s Electrical</title>
+<title>FlowFix Plumbing | Reliable Local Plumbing Services</title>
 <style>
+  @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap');
+  * {
+    box-sizing: border-box;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
   body {
-    font-family: Arial, sans-serif;
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+    background: #f7f9fc;
     color: #222;
-    margin: 0;
-    background-color: #f9f9f9;
+    line-height: 1.6;
   }
-  header {
-    background-color: #00457c;
-    color: white;
-    padding: 60px 20px 40px;
-    text-align: center;
-  }
-  header h1 {
-    margin: 0;
-    font-size: 2.5em;
-    line-height: 1.2;
-  }
-  header p {
-    margin-top: 0.5em;
-    font-size: 1.25em;
-    font-weight: 300;
-  }
-  .cta-button {
-    display: inline-block;
-    margin-top: 1.8em;
-    background-color: #ff6f00;
-    color: white;
-    font-weight: bold;
-    padding: 14px 32px;
-    font-size: 1.1em;
-    border: none;
-    border-radius: 3px;
-    cursor: pointer;
+  a {
+    color: #007a4d;
     text-decoration: none;
-    transition: background-color 0.3s ease;
   }
-  .cta-button:hover,
-  .cta-button:focus {
-    background-color: #e65a00;
-    outline: none;
+  a:hover, a:focus {
+    text-decoration: underline;
   }
-  main {
-    max-width: 1000px;
-    margin: 40px auto;
-    padding: 0 20px 60px;
+  h1,h2,h3,h4 {
+    margin-top: 0;
   }
-  section {
-    margin-bottom: 50px;
+  h1 {
+    font-weight: 700;
+    font-size: 2.8rem;
+    line-height: 1.1;
+    color: #004d26;
   }
-  section h2 {
-    color: #00457c;
-    font-size: 1.8em;
-    border-bottom: 3px solid #ff6f00;
-    padding-bottom: 6px;
-    margin-bottom: 16px;
+  h2 {
+    color: #007a4d;
+    font-weight: 700;
+    font-size: 2rem;
+    margin-bottom: 1rem;
   }
-  ul.services-list,
-  ul.why-list {
-    list-style: none;
-    padding-left: 0;
-    margin: 0;
-  }
-  ul.services-list li,
-  ul.why-list li {
-    background: url('data:image/svg+xml;utf8,<svg fill="%23004A73" height="16" viewBox="0 0 24 24" width="16" xmlns="http://www.w3.org/2000/svg"><path d="M9 16.2L4.8 12l-1.4 1.4L9 19 21 7l-1.4-1.4z"/></svg>') no-repeat left center;
-    background-size: 16px 16px;
-    padding-left: 26px;
-    margin-bottom: 10px;
-    font-size: 1.1em;
+  h3 {
+    font-weight: 600;
+    font-size: 1.3rem;
+    margin-bottom: .75rem;
+    color: #004d26cc;
   }
   p {
-    line-height: 1.6;
-    font-size: 1.1em;
+    font-weight: 400;
+    font-size: 1rem;
+    margin-bottom: 1.2rem;
+    color: #222;
   }
-  address {
+  .container {
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 1.25rem 3rem;
+  }
+  .hero {
+    background: linear-gradient(135deg, #007a4d 0%, #004d26 100%);
+    color: #e6f1e8;
+    padding: 5rem 1.25rem 5rem;
+    text-align: center;
+    position: relative;
+  }
+  .hero h1 {
+    font-size: 3rem;
+  }
+  .hero h2 {
+    font-weight: 500;
+    font-size: 1.4rem;
+    max-width: 600px;
+    margin: 0 auto 2rem;
+    color: #c6deb9;
+  }
+  .btn-primary {
+    background: #e6f1e8;
+    color: #004d26;
+    border: none;
+    padding: 0.9rem 2.3rem;
+    font-weight: 700;
+    font-size: 1.05rem;
+    border-radius: 50px;
+    cursor: pointer;
+    box-shadow: 0 6px 12px rgb(0 77 38 / 0.35);
+    transition: background-color 0.3s ease, color 0.3s ease;
+    display: inline-block;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+  }
+  .btn-primary:hover,
+  .btn-primary:focus {
+    background: #004d26;
+    color: #e6f1e8;
+    outline: none;
+  }
+  .trust-section {
+    background: white;
+    padding: 2.5rem 1rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgb(0 77 38 / 0.1);
+    max-width: 800px;
+    margin: -4rem auto 4rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+  }
+  .trust-badge {
+    flex: 1 1 160px;
+    background: linear-gradient(135deg, #004d26 0%, #007a4d 100%);
+    color: white;
+    border-radius: 10px;
+    padding: 1.25rem 1rem;
+    font-weight: 700;
+    font-size: 1rem;
+    box-shadow: 0 5px 15px rgb(0 77 38 / 0.3);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 110px;
+    text-align: center;
+    line-height: 1.2;
+  }
+  .trust-badge span {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    user-select: none;
+  }
+  section {
+    margin-bottom: 4.5rem;
+  }
+  section > h2 {
+    text-align: center;
+    margin-bottom: 2.5rem;
+  }
+  .service-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+    gap: 2rem;
+  }
+  .card {
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgb(0 0 0 / 0.07);
+    padding: 1.75rem 1.5rem 2rem;
+    transition: box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+  }
+  .card:hover, .card:focus-within {
+    box-shadow: 0 12px 28px rgb(0 122 77 / 0.3);
+    outline: none;
+  }
+  .card-icon {
+    font-size: 2.7rem;
+    margin-bottom: 1rem;
+    user-select: none;
+    align-self: center;
+  }
+  .card h3 {
+    margin-bottom: 0.7rem;
+    color: #004d26;
+  }
+  .card p, .card ul {
+    flex-grow: 1;
+    color: #444;
+    font-weight: 400;
+    font-size: 0.95rem;
+  }
+  .card ul {
+    padding-left: 1.2rem;
+    margin: 0;
+  }
+  .card ul li {
+    margin-bottom: 0.35rem;
+  }
+  .about-section {
+    background: #e6f1e8;
+    border-radius: 15px;
+    padding: 3rem 1.25rem;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 8px 16px rgb(0 77 38 / 0.15);
+  }
+  .about-content {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+    font-size: 1.05rem;
+    color: #034d1b;
+  }
+  .process-section {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 1.25rem;
+  }
+  .process-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+  }
+  .process-step {
+    background: white;
+    box-shadow: 0 7px 18px rgb(0 0 0 / 0.08);
+    border-radius: 16px;
+    padding: 2rem 1.5rem 2rem;
+    max-width: 260px;
+    flex: 1 1 200px;
+    text-align: center;
+    position: relative;
+    user-select: none;
+  }
+  .process-step::before {
+    content: attr(data-num);
+    position: absolute;
+    top: -18px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #007a4d;
+    color: #e6f1e8;
+    font-weight: 700;
+    font-size: 1.2rem;
+    border-radius: 100%;
+    width: 38px;
+    height: 38px;
+    line-height: 38px;
+    box-shadow: 0 4px 12px rgb(0 122 77 / 0.45);
+  }
+  .process-step h3 {
+    margin-top: 1rem;
+    color: #004d26;
+  }
+  .process-step p {
+    margin-top: 0.7rem;
+    font-weight: 400;
+    color: #333;
+    font-size: 0.95rem;
+  }
+  .why-choose-section {
+    background: white;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 3rem 1.25rem;
+    box-shadow: 0 10px 24px rgb(0 0 0 / 0.1);
+    border-radius: 16px;
+  }
+  .why-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(240px,1fr));
+    gap: 1.8rem 2rem;
+  }
+  .why-item {
+    background: linear-gradient(135deg, #e6f1e8, #c3ddbf);
+    border-radius: 12px;
+    padding: 1.5rem 1.7rem;
+    box-shadow: inset 0 2px 6px rgb(0 77 38 / 0.15);
+    font-weight: 600;
+    font-size: 1.05rem;
+    color: #14521d;
+    text-align: center;
+    user-select: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 110px;
+  }
+  .why-item span {
+    font-size: 2rem;
+    margin-bottom: 0.45rem;
+  }
+  .testimonials-section {
+    background: #f0fbf4;
+    padding: 3rem 1.25rem;
+    max-width: 900px;
+    margin: 0 auto 5rem;
+    border-radius: 14px;
+    box-shadow: 0 8px 24px rgb(0 77 38 / 0.12);
+  }
+  .testimonial {
+    background: white;
+    padding: 1.75rem 1.5rem 1.75rem;
+    border-radius: 12px;
+    box-shadow: 0 6px 16px rgb(0 0 0 / 0.08);
+    margin-bottom: 1.75rem;
+    font-style: italic;
+    color: #20441a;
+    position: relative;
+    user-select: none;
+  }
+  .testimonial:last-child {
+    margin-bottom: 0;
+  }
+  .testimonial::before {
+    content: "“";
+    font-size: 3rem;
+    line-height: 0;
+    color: #004d26cc;
+    position: absolute;
+    top: 10px;
+    left: 12px;
+    font-weight: 900;
+    user-select: none;
+  }
+  .testimonial-footer {
+    margin-top: 1rem;
     font-style: normal;
-    font-size: 1.1em;
-    line-height: 1.5;
+    font-weight: 700;
+    color: #007a4d;
+    text-align: right;
+    font-size: 0.95rem;
+  }
+  .service-area-section {
+    max-width: 900px;
+    margin: 0 auto 4.5rem;
+    padding: 0 1.25rem;
+  }
+  .service-area-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem 1.5rem;
+    justify-content: center;
+    font-weight: 600;
+    color: #00582e;
+    font-size: 1.05rem;
+    user-select: none;
+  }
+  .service-area-list li {
+    list-style: none;
+    background: #c3ddbf;
+    padding: 0.45rem 1rem;
+    border-radius: 22px;
+    box-shadow: inset 0 1px 3px rgb(0 77 38 / 0.18);
+  }
+  .faq-section {
+    max-width: 900px;
+    margin: 0 auto 5rem;
+    padding: 0 1.25rem;
+  }
+  .faq-item {
+    margin-bottom: 1.5rem;
+  }
+  .faq-item:last-child {
+    margin-bottom: 0;
+  }
+  .faq-question {
+    font-weight: 600;
+    font-size: 1.1rem;
+    color: #004d26;
+    margin-bottom: 0.3rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .faq-question::before {
+    content: "❓";
+    font-size: 1.3rem;
+  }
+  .faq-answer {
+    font-size: 1rem;
+    color: #222;
+    padding-left: 1.25rem;
+    position: relative;
+  }
+  .faq-answer::before {
+    content: "✔️";
+    position: absolute;
+    left: 0;
+  }
+  .contact-cta-section {
+    background: linear-gradient(135deg, #004d26 0%, #007a4d 100%);
+    color: #e6f1e8;
+    text-align: center;
+    padding: 3.5rem 1.25rem 5rem;
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgb(0 77 38 / 0.5);
+  }
+  .contact-cta-section h2 {
+    font-size: 2.2rem;
+    margin-bottom: 1.2rem;
+  }
+  .contact-cta-section p {
+    font-size: 1.15rem;
+    margin-bottom: 2rem;
+    font-weight: 500;
+  }
+  .contact-cta-section a.phone-link {
+    font-weight: 700;
+    font-size: 1.55rem;
+    background: #e6f1e8;
+    color: #004d26;
+    padding: 1rem 2.8rem;
+    border-radius: 50px;
+    display: inline-block;
+    box-shadow: 0 6px 14px rgb(0 77 38 / 0.45);
+    user-select: none;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  .contact-cta-section a.phone-link:hover,
+  .contact-cta-section a.phone-link:focus {
+    background: #004d26;
+    color: #e6f1e8;
+    outline: none;
   }
   form {
-    background-color: #fff;
-    border: 1px solid #ccc;
-    padding: 24px 20px 20px;
-    border-radius: 6px;
-    max-width: 480px;
+    max-width: 720px;
+    margin: 2rem auto 0;
+    background: white;
+    padding: 2rem 2.5rem 2.5rem;
+    border-radius: 14px;
+    box-shadow: 0 8px 26px rgb(0 0 0 / 0.09);
   }
   form label {
     display: block;
-    margin-bottom: 6px;
     font-weight: 600;
-    margin-top: 15px;
+    margin-bottom: 0.35rem;
+    color: #004d26;
+    user-select: none;
   }
-  form input[type="text"],
-  form input[type="email"],
-  form input[type="tel"],
-  form select,
-  form textarea {
+  form input, form select {
     width: 100%;
-    padding: 8px 10px;
-    border: 1px solid #bbb;
-    border-radius: 4px;
-    font-size: 1em;
-    font-family: inherit;
-    resize: vertical;
+    padding: 0.55rem 0.8rem;
+    margin-bottom: 1.5rem;
+    border-radius: 8px;
+    border: 1.8px solid #a6bfa0;
+    font-size: 1rem;
+    font-family: 'Montserrat', sans-serif;
+    outline-offset: 2px;
+    transition: border-color 0.3s ease;
   }
-  form textarea {
-    min-height: 80px;
+  form input:focus,
+  form select:focus {
+    border-color: #007a4d;
+    outline: none;
   }
   form button {
-    margin-top: 20px;
-    background-color: #00457c;
-    color: white;
-    font-weight: 600;
-    padding: 12px 26px;
-    font-size: 1.1em;
+    background: #007a4d;
+    color: #e6f1e8;
+    font-weight: 700;
+    font-size: 1.15rem;
     border: none;
-    border-radius: 3px;
+    padding: 0.95rem 0;
+    width: 100%;
+    border-radius: 50px;
     cursor: pointer;
+    box-shadow: 0 6px 18px rgb(0 122 77 / 0.4);
     transition: background-color 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
   }
   form button:hover,
   form button:focus {
-    background-color: #002e4d;
+    background: #004d26;
     outline: none;
   }
   footer {
     text-align: center;
+    padding: 2.3rem 1rem 3rem;
+    font-size: 0.9rem;
     color: #666;
-    font-size: 0.9em;
-    padding: 20px 10px;
-    border-top: 1px solid #ccc;
-    background-color: #f4f4f4;
+    user-select: none;
+  }
+  .sticky-call {
+    position: fixed;
+    bottom: 12px;
+    right: 15px;
+    background: #007a4d;
+    border-radius: 50%;
+    width: 52px;
+    height: 52px;
+    box-shadow: 0 7px 18px rgb(0 122 77 / 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  .sticky-call:hover,
+  .sticky-call:focus {
+    background: #004d26;
+    outline: none;
+  }
+  .sticky-call a {
+    color: #e6f1e8;
+    font-size: 1.8rem;
+    text-decoration: none;
+    user-select: none;
+  }
+  @media (max-width: 480px) {
+    h1 {
+      font-size: 2.25rem;
+    }
+    .hero h2 {
+      font-size: 1.1rem;
+    }
+    .btn-primary {
+      padding: 0.8rem 1.85rem;
+      font-size: 0.95rem;
+    }
+    .contact-cta-section h2 {
+      font-size: 1.8rem;
+    }
+    .contact-cta-section a.phone-link {
+      font-size: 1.3rem;
+      padding: 0.85rem 2rem;
+    }
   }
 </style>
 </head>
 <body>
-<header role="banner">
-  <h1>Powering Your Home and Business with Reliable Electrical Solutions</h1>
-  <p>Fast, professional electrical services you can count on.</p>
-  <a href="#contact" class="cta-button" role="button">Schedule Your Free Electrical Estimate Today</a>
+
+<header class="hero" role="banner">
+  <div class="container" tabindex="-1">
+    <h1>FlowFix Plumbing</h1>
+    <h2>Reliable Local Plumbing Services in Your Suburb/Region, Australia</h2>
+    <p>Fast, Expert Plumbing Solutions When You Need Them Most</p>
+    <p>At FlowFix Plumbing, we understand that plumbing problems can strike at the worst moments. A burst pipe, blocked drain, or leaking tap disrupts your day and risks costly property damage. That’s why our team of licensed local plumbers is committed to fast, friendly, and affordable service — restoring your peace of mind without delay.</p>
+    <button class="btn-primary" onclick="document.getElementById('contact-form').scrollIntoView({behavior:'smooth'})" aria-label="Request a free quote - scroll to contact form">Request a Free Quote</button>
+  </div>
 </header>
-<main role="main">
-  <section id="services" aria-labelledby="services-title">
-    <h2 id="services-title">Our Services</h2>
-    <ul class="services-list">
-      <li>Electrical Repairs &amp; Troubleshooting</li>
-      <li>New Electrical Installations</li>
-      <li>Lighting Installation &amp; Upgrades</li>
-      <li>Safety Inspections &amp; Code Compliance</li>
-      <li>Panel Upgrades &amp; Circuit Breaker Replacement</li>
-      <li>Emergency Electrical Services</li>
-    </ul>
-  </section>
-  <section id="about" aria-labelledby="about-title">
-    <h2 id="about-title">About Luke’s Electrical</h2>
-    <p>At Luke’s Electrical, we pride ourselves on delivering expert electrical services with a personal touch. Luke, a licensed electrician with over 10 years of experience, leads a team committed to safety, quality, and customer satisfaction. We are fully licensed and insured, ensuring peace of mind with every job.</p>
-  </section>
-  <section id="why" aria-labelledby="why-title">
-    <h2 id="why-title">Why Choose Us</h2>
-    <ul class="why-list">
-      <li>Local, Trusted Professionals</li>
-      <li>Licensed &amp; Insured Electricians</li>
-      <li>Transparent Pricing with Free Estimates</li>
-      <li>Prompt and Reliable Service</li>
-      <li>Quality Workmanship Guaranteed</li>
-      <li>Emergency Services Available 24/7</li>
-    </ul>
-  </section>
-  <section id="contact" aria-labelledby="contact-title">
-    <h2 id="contact-title">Contact Luke’s Electrical</h2>
-    <address>
-      Phone: <a href="tel:+15551234567">(555) 123-4567</a><br />
-      Email: <a href="mailto:contact@lukeselectrical.com">contact@lukeselectrical.com</a><br />
-      Address: 123 Main Street, Your Town, ST 12345
-    </address>
-    <p>Request a free estimate or call for emergency service anytime!</p>
-    <form action="#" method="post" aria-label="Contact form for Luke’s Electrical">
-      <label for="name">Name</label>
-      <input type="text" id="name" name="name" required placeholder="Your full name" />
-      <label for="email">Email</label>
-      <input type="email" id="email" name="email" required placeholder="you@example.com" />
-      <label for="phone">Phone</label>
-      <input type="tel" id="phone" name="phone" placeholder="(555) 123-4567" />
-      <label for="service">Service Needed</label>
-      <select id="service" name="service" required>
-        <option value="" disabled selected>Select a service</option>
-        <option value="Electrical Repairs & Troubleshooting">Electrical Repairs & Troubleshooting</option>
-        <option value="New Electrical Installations">New Electrical Installations</option>
-        <option value="Lighting Installation & Upgrades">Lighting Installation & Upgrades</option>
-        <option value="Safety Inspections & Code Compliance">Safety Inspections & Code Compliance</option>
-        <option value="Panel Upgrades & Circuit Breaker Replacement">Panel Upgrades & Circuit Breaker Replacement</option>
-        <option value="Emergency Electrical Services">Emergency Electrical Services</option>
-        <option value="Other">Other</option>
-      </select>
-      <label for="message">Message</label>
-      <textarea id="message" name="message" placeholder="Your message or questions here"></textarea>
-      <button type="submit">Send Message</button>
-    </form>
-  </section>
-</main>
-<footer role="contentinfo">
-  &copy; 2024 Luke’s Electrical. All rights reserved.
+
+<section aria-labelledby="trust-title">
+  <h2 id="trust-title">Why Choose FlowFix Plumbing?</h2>
+  <div class="trust-section" role="list">
+    <div class="trust-badge" role="listitem" aria-label="Trusted Local Experts - Over 10 years experience">
+      <span>🏅</span> Trusted Local Experts<br>Over 10 years experience
+    </div>
+    <div class="trust-badge" role="listitem" aria-label="24/7 Emergency Response">
+      <span>⏰</span> 24/7 Emergency <br>Response
+    </div>
+    <div class="trust-badge" role="listitem" aria-label="Upfront Pricing - No hidden fees">
+      <span>💰</span> Upfront Pricing<br>No hidden fees
+    </div>
+    <div class="trust-badge" role="listitem" aria-label="Quality Workmanship Guaranteed">
+      <span>🔧</span> Quality Workmanship<br>Guaranteed
+    </div>
+    <div class="trust-badge" role="listitem" aria-label="Customer Satisfaction Focused">
+      <span>👍</span> Customer Satisfaction<br>Focused
+    </div>
+  </div>
+</section>
+
+<section aria-labelledby="services-title" class="container">
+  <h2 id="services-title">We Fix Your Plumbing Problems Fast</h2>
+  <div class="service-cards">
+    <article class="card" tabindex="0" aria-label="Emergency Plumbing Repairs including burst pipes, leaks, and blockages">
+      <div class="card-icon" aria-hidden="true">🚨</div>
+      <h3>Emergency Plumbing Repairs</h3>
+      <p>Burst pipes, leaks, blockages solved fast with expert precision.</p>
+    </article>
+    <article class="card" tabindex="0" aria-label="Drain Cleaning and Unblocking services">
+      <div class="card-icon" aria-hidden="true">🚿</div>
+      <h3>Drain Cleaning &amp; Unblocking</h3>
+      <p>Efficient drain clearing to restore proper flow and prevent damage.</p>
+    </article>
+    <article class="card" tabindex="0" aria-label="Hot Water System Installation and Repair">
+      <div class="card-icon" aria-hidden="true">🔥</div>
+      <h3>Hot Water System Installation &amp; Repair</h3>
+      <p>Reliable hot water solutions for your home or business.</p>
+    </article>
+    <article class="card" tabindex="0" aria-label="Toilet Repairs and Replacements">
+      <div class="card-icon" aria-hidden="true">🚽</div>
+      <h3>Toilet Repairs &amp; Replacements</h3>
+      <p>Fixing and upgrading toilets promptly to avoid inconvenience.</p>
+    </article>
+    <article class="card" tabindex="0" aria-label="Tap and Faucet Repairs">
+      <div class="card-icon" aria-hidden="true">🔧</div>
+      <h3>Tap &amp; Faucet Repairs</h3>
+      <p>Leak-free taps and faucets for efficiency and comfort.</p>
+    </article>
+    <article class="card" tabindex="0" aria-label="Professional Gas Fitting Services">
+      <div class="card-icon" aria-hidden="true">🛠️</div>
+      <h3>Gas Fitting Services</h3>
+      <p>Certified gas fitting for safety and compliance.</p>
+    </article>
+    <article class="card" tabindex="0" aria-label="Roof and Gutter Plumbing">
+      <div class="card-icon" aria-hidden="true">🏠</div>
+      <h3>Roof &amp; Gutter Plumbing</h3>
+      <p>Prevent leaks and water damage with expert roof plumbing.</p>
+    </article>
+    <article class="card" tabindex="0" aria-label="Pipe Relining and Replacement Services">
+      <div class="card-icon" aria-hidden="true">🔩</div>
+      <h3>Pipe Relining &amp; Replacement</h3>
+      <p>Long-lasting solutions to damaged and corroded pipes.</p>
+    </article>
+    <article class="card" tabindex="0" aria-label="Bathroom and Kitchen Plumbing Upgrades">
+      <div class="card-icon" aria-hidden="true">🛁</div>
+      <h3>Bathroom &amp; Kitchen Plumbing Upgrades</h3>
+      <p>Enhance your home with professional plumbing renovations.</p>
+    </article>
+  </div>
+</section>
+
+<section aria-labelledby="emergency-title" class="container">
+  <h2 id="emergency-title">Emergency Plumbing? We’re On Call 24/7</h2>
+  <p>Plumbing disasters don’t keep office hours — but we do. Whenever water starts flowing where it shouldn’t or your hot water fails, call FlowFix Plumbing for immediate, reliable help. Local and ready to respond fast to prevent damage and restore functionality.</p>
+  <p><strong>Call us anytime at <a href="tel:+61299998888" aria-label="Call FlowFix Plumbing now">02 9999 8888</a> for emergency service 24/7.</strong></p>
+</section>
+
+<section aria-labelledby="service-area-title" class="service-area-section">
+  <h2 id="service-area-title">Proudly Serving Your Suburb and Surrounding Areas</h2>
+  <ul class="service-area-list" role="list" aria-label="Service Areas">
+    <li>Suburb 1</li>
+    <li>Suburb 2</li>
+    <li>Suburb 3</li>
+    <li>Surrounding neighborhoods throughout Region</li>
+  </ul>
+  <p style="text-align:center; margin-top:1rem; font-style: italic; color:#00582e; font-weight:600;">No matter where you are in Region, FlowFix Plumbing is your go-to local plumber.</p>
+</section>
+
+<section aria-labelledby="about-title" class="about-section" tabindex="0">
+  <h2 id="about-title">About FlowFix Plumbing</h2>
+  <div class="about-content">
+    <p>Serving Your Suburb/Region for over a decade, FlowFix Plumbing is a fully licensed and insured local business dedicated to delivering quality workmanship with integrity and care. Our experienced plumbers undertake each job with precision, ensuring high standards of safety and customer satisfaction. We pride ourselves on clear communication, reliable pricing, and timely service, making us the trusted choice for all your plumbing needs.</p>
+  </div>
+</section>
+
+<section aria-labelledby="process-title" class="process-section" tabindex="0">
+  <h2 id="process-title">How It Works</h2>
+  <div class="process-list">
+    <div class="process-step" data-num="1" tabindex="0" aria-label="Step 1: Contact FlowFix Plumbing">
+      <h3>Contact Us</h3>
+      <p>Easy 24/7 phone or online contact for emergency or scheduled service.</p>
+    </div>
+    <div class="process-step" data-num="2" tabindex="0" aria-label="Step 2: Transparent Quotation">
+      <h3>Get a Quote</h3>
+      <p>We provide an upfront, competitive written quote before any work begins.</p>
+    </div>
+    <div class="process-step" data-num="3" tabindex="0" aria-label="Step 3: Expert Service">
+      <h3>Work Commencement</h3>
+      <p>Licensed plumbers arrive on time, equipped, and ready to work with excellence.</p>
+    </div>
+    <div class="process-step" data-num="4" tabindex="0" aria-label="Step 4: Satisfaction Guarantee">
+      <h3>Job Completion</h3>
+      <p>We clean up, test all work, and ensure you’re completely satisfied.</p>
+    </div>
+  </div>
+</section>
+
+<section aria-labelledby="why-choose-title" class="why-choose-section" tabindex="0">
+  <h2 id="why-choose-title">Why Choose Us?</h2>
+  <div class="why-list" role="list">
+    <div class="why-item" role="listitem"><span>✅</span> Licensed &amp; Insured</div>
+    <div class="why-item" role="listitem"><span>✅</span> 24/7 Emergency Service</div>
+    <div class="why-item" role="listitem"><span>✅</span> Transparent Upfront Pricing</div>
+    <div class="why-item" role="listitem"><span>✅</span> Experienced Local Plumbers</div>
+    <div class="why-item" role="listitem"><span>✅</span> Satisfaction Guarantee</div>
+    <div class="why-item" role="listitem"><span>✅</span> Clean &amp; Professional</div>
+  </div>
+</section>
+
+<section aria-labelledby="testimonials-title" class="testimonials-section" tabindex="0">
+  <h2 id="testimonials-title">What Our Customers Say</h2>
+  <div class="testimonial" tabindex="0">
+    <p>FlowFix Plumbing saved us during a burst pipe emergency in the middle of the night. Fast, professional, and affordable — we couldn’t recommend them enough!</p>
+    <div class="testimonial-footer">— Sarah J., Suburb</div>
+  </div>
+  <div class="testimonial" tabindex="0">
+    <p>Friendly service with clear pricing and excellent workmanship. The team fixed my blocked drain quickly and left everything clean.</p>
+    <div class="testimonial-footer">— Mark D., Suburb</div>
+  </div>
+  <div class="testimonial" tabindex="0">
+    <p>Highly reliable, polite, and knowledgeable plumbers. They explained everything clearly and did a fantastic job upgrading our kitchen plumbing.</p>
+    <div class="testimonial-footer">— Emily R., Suburb</div>
+  </div>
+</section>
+
+<section aria-labelledby="faq-title" class="faq-section" tabindex="0">
+  <h2 id="faq-title">Frequently Asked Questions</h2>
+  <div class="faq-item" tabindex="0">
+    <div class="faq-question">Are you licensed and insured?</div>
+    <div class="faq-answer">Yes, FlowFix Plumbing is fully licensed and insured for all plumbing work in Your Region.</div>
+  </div>
+  <div class="faq-item" tabindex="0">
+    <div class="faq-question">How quickly can you respond to emergency plumbing calls?</div>
+    <div class="faq-answer">We offer 24/7 emergency service with response times typically under 1 hour within our local service area.</div>
+  </div>
+  <div class="faq-item" tabindex="0">
+    <div class="faq-question">Do you provide upfront quotes?</div>
+    <div class="faq-answer">Absolutely. Before starting any work, we provide a transparent written quote so there are no surprises.</div>
+  </div>
+  <div class="faq-item" tabindex="0">
+    <div class="faq-question">What payment methods do you accept?</div>
+    <div class="faq-answer">We accept cash, credit/debit cards, and electronic bank transfers.</div>
+  </div>
+  <div class="faq-item" tabindex="0">
+    <div class="faq-question">Can you help with renovating my bathroom or kitchen plumbing?</div>
+    <div class="faq-answer">Yes, we offer comprehensive plumbing upgrades and installations for renovations and new builds.</div>
+  </div>
+</section>
+
+<section aria-labelledby="contact-title" class="container contact-cta-section" tabindex="0">
+  <h2 id="contact-title">Ready for Fast, Reliable Plumbing Service?</h2>
+  <p>Don’t let plumbing problems disrupt your life any longer. Contact FlowFix Plumbing today for expert assistance and swift, affordable solutions.</p>
+  <a href="tel:+61299998888" class="phone-link" aria-label="Call FlowFix Plumbing now at 02 9999 8888">Call us now at 02 9999 8888 — Available 24/7!</a>
+
+  <form id="contact-form" aria-label="Request a free quote online form" novalidate>
+    <label for="name">Name</label>
+    <input id="name" name="name" type="text" required placeholder="Your full name" autocomplete="name" />
+
+    <label for="phone">Phone</label>
+    <input id="phone" name="phone" type="tel" pattern="[\d\s()+-]+" required placeholder="e.g. 0412 345 678" autocomplete="tel" />
+
+    <label for="email">Email</label>
+    <input id="email" name="email" type="email" required placeholder="example@mail.com" autocomplete="email" />
+
+    <label for="service">Service Required</label>
+    <select id="service" name="service" required>
+      <option value="" disabled selected>Select a service</option>
+      <option>Emergency Plumbing Repairs</option>
+      <option>Drain Cleaning & Unblocking</option>
+      <option>Hot Water System Installation & Repair</option>
+      <option>Toilet Repairs & Replacements</option>
+      <option>Tap & Faucet Repairs</option>
+      <option>Gas Fitting Services</option>
+      <option>Roof & Gutter Plumbing</option>
+      <option>Pipe Relining & Replacement</option>
+      <option>Bathroom & Kitchen Plumbing Upgrades</option>
+      <option>Other / Advice</option>
+    </select>
+
+    <label for="contact-time">Preferred Contact Time</label>
+    <select id="contact-time" name="contact-time" required>
+      <option value="" disabled selected>Select a time</option>
+      <option>Morning (8am - 12pm)</option>
+      <option>Afternoon (12pm - 5pm)</option>
+      <option>Evening (5pm - 9pm)</option>
+      <option>Anytime</option>
+    </select>
+
+    <button type="submit" aria-label="Submit request form for free quote">Submit Request</button>
+  </form>
+</section>
+
+<footer>
+  FlowFix Plumbing | Your Trusted Local Plumbers in Your Suburb/Region · Licensed. Insured. Always On Time.<br />
+  <small>123 Greenway Rd, Your Suburb, NSW 2000 | Phone: 02 9999 8888 | Email: contact@flowfixplumbing.au</small>
 </footer>
+
+<div class="sticky-call" role="button" aria-label="Call FlowFix Plumbing phone" tabindex="0" onclick="window.location.href='tel:+61299998888'" onkeypress="if(event.key==='Enter'){window.location.href='tel:+61299998888'}">
+  <a href="tel:+61299998888" aria-hidden="true">📞</a>
+</div>
+
+<script>
+  // Basic client-side validation and form success simulation
+  const form = document.getElementById('contact-form');
+  form.addEventListener('submit', e => {
+    e.preventDefault();
+    if (form.checkValidity()) {
+      alert('Thank you for your enquiry! We will contact you shortly.');
+      form.reset();
+    } else {
+      form.reportValidity();
+    }
+  });
+</script>
+
 </body>
 </html>
