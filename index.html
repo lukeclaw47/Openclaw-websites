@@ -3,715 +3,612 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>FlowFix Plumbing – Your Trusted Local Plumber in Sydney</title>
+<title>Fluffy Tail Dogs – Where Style Meets Wag</title>
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
   :root {
-    --primary-color: #007a5a;
-    --secondary-color: #004c38;
-    --accent-color: #50c878;
-    --background-gradient: linear-gradient(135deg, #007a5a 0%, #004c38 100%);
-    --shadow: rgba(0, 0, 0, 0.12);
-    --max-width: 1200px;
-    --font-family: 'Inter', sans-serif;
+    --clr-primary: #1e3a8a;
+    --clr-secondary: #fbbf24;
+    --clr-accent: #4ade80;
+    --clr-bg: #f9fafb;
+    --clr-text: #1f2937;
+    --clr-muted: #6b7280;
+    --shadow-card: 0 8px 16px rgb(30 58 138 / 0.15);
+    --shadow-strong: 0 4px 24px rgb(30 58 138 / 0.25);
+    --font-sans: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   }
+
+  /* Reset and basics */
   *, *::before, *::after {
     box-sizing: border-box;
   }
   body {
-    margin: 0;
-    font-family: var(--font-family);
-    background: #f7f9f9;
-    color: #333;
+    margin: 0; background: var(--clr-bg); color: var(--clr-text);
+    font-family: var(--font-sans);
     line-height: 1.6;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
-  a {
-    color: var(--primary-color);
-    text-decoration: none;
-  }
-  a:hover,
-  a:focus {
-    text-decoration: underline;
+    font-size: 1rem;
   }
   img {
     max-width: 100%;
     height: auto;
+    display: block;
   }
-  header {
-    background: var(--background-gradient);
-    color: #fff;
-    padding: 3rem 1.5rem 5rem 1.5rem;
-    position: relative;
+  a {
+    color: var(--clr-primary);
+    text-decoration: none;
   }
-  .container {
-    max-width: var(--max-width);
-    margin: 0 auto;
-    padding: 0 1.5rem;
+  a:hover, a:focus {
+    text-decoration: underline;
   }
-  header h1 {
+  strong {
+    color: var(--clr-primary);
+  }
+  h1, h2, h3 {
+    color: var(--clr-primary);
     font-weight: 700;
-    font-size: 2.75rem;
-    line-height: 1.1;
-    margin-bottom: 0.5rem;
-    max-width: 600px;
+    line-height: 1.2;
+    margin-top: 0;
   }
-  header p.lead {
-    font-weight: 600;
+  h1 {
+    font-size: 2.25rem;
+  }
+  h2 {
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+  }
+  h3 {
     font-size: 1.25rem;
-    max-width: 650px;
-    margin-bottom: 1.75rem;
-    color: #d6ede3;
   }
-  .btn-primary {
-    display: inline-block;
-    background: var(--accent-color);
-    color: #fff;
-    font-weight: 700;
-    padding: 1rem 2rem;
-    border-radius: 5px;
-    box-shadow: 0 5px 15px var(--shadow);
-    transition: background-color 0.3s ease;
+  p {
+    margin-top: 0;
+    margin-bottom: 1.25rem;
+  }
+  ul {
+    padding-left: 1.25rem;
+    margin-top: 0; margin-bottom: 1.25rem;
+  }
+  button, input[type=submit] {
     cursor: pointer;
-    user-select: none;
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 600;
     border: none;
-    font-size: 1.125rem;
+    border-radius: 6px;
+    padding: 0.75em 1.5em;
+    background: var(--clr-primary);
+    color: white;
+    box-shadow: var(--shadow-strong);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  }
+  button:hover, input[type=submit]:hover,
+  button:focus, input[type=submit]:focus {
+    background: #174ea6;
+    box-shadow: 0 6px 20px rgb(23 78 166 / 0.5);
+    outline-offset: 3px;
+    outline-color: var(--clr-secondary);
+    outline-style: solid;
+  }
+
+  .container {
+    width: 90vw;
+    max-width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .section {
+    padding: 3rem 0;
+  }
+  .text-center {
     text-align: center;
-    white-space: nowrap;
   }
-  .btn-primary:hover,
-  .btn-primary:focus {
-    background: #43b66f;
-  }
-  section {
-    padding: 4rem 1.5rem 4rem 1.5rem;
-  }
-  h2.section-title {
+
+  /* Hero */
+  header.hero {
+    background: linear-gradient(to bottom right, #2563ebdd, #60a5faee);
+    color: white;
+    padding: 6rem 1rem 4rem;
     text-align: center;
-    font-weight: 700;
-    font-size: 2rem;
-    margin-bottom: 2rem;
-    color: var(--secondary-color);
+    position: relative;
+    overflow: hidden;
   }
-  /* Hero Section */
-  .hero-info {
-    max-width: 700px;
-    margin-bottom: 2rem;
+  header.hero h1 {
+    font-size: clamp(2rem, 6vw, 3rem);
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
   }
+  header.hero p {
+    max-width: 600px;
+    margin: 1.5rem auto 0;
+    font-size: 1.2rem;
+    font-weight: 500;
+  }
+  header.hero .btn-primary {
+    margin-top: 2.5rem;
+  }
+
   /* Trust Badges */
   .trust-badges {
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
-    gap: 1.75rem;
-    margin: 2rem 0 0 0;
+    gap: 2rem;
+    margin-top: 1rem;
+    flex-wrap: wrap;
   }
-  .badge {
-    background: #fff;
-    padding: 1.25rem 1.75rem;
-    box-shadow: 0 2px 8px var(--shadow);
+  .trust-badge {
+    background: white;
+    color: var(--clr-primary);
     border-radius: 12px;
-    font-weight: 600;
-    font-size: 1rem;
-    color: var(--secondary-color);
+    box-shadow: var(--shadow-card);
+    padding: 0.75rem 1.5rem;
     display: flex;
     align-items: center;
     gap: 0.75rem;
-    min-width: 170px;
-    justify-content: center;
+    font-weight: 600;
+    font-size: 0.95rem;
     user-select: none;
   }
-  .badge span.icon {
+  .trust-badge span.icon {
     font-size: 1.5rem;
   }
-  /* Services Cards */
-  .services-grid {
+
+  /* Service Cards */
+  .services {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 1.5rem;
     margin-top: 2rem;
   }
-  .card {
-    background: #fff;
-    border-radius: 12px;
-    padding: 1.75rem 1.75rem 2.25rem 1.75rem;
-    box-shadow: 0 5px 15px var(--shadow);
+  .service-card {
+    background: white;
+    padding: 1.75rem 1.5rem;
+    border-radius: 16px;
+    box-shadow: var(--shadow-card);
     display: flex;
     flex-direction: column;
-    height: 100%;
+    gap: 0.5rem;
   }
-  .card h3 {
-    font-size: 1.25rem;
-    font-weight: 700;
-    color: var(--primary-color);
-    margin-bottom: 0.75rem;
-  }
-  .card ul {
-    margin: 0;
-    padding-left: 1.25rem;
-    list-style-type: disc;
-    color: #555;
-    font-size: 1rem;
-  }
-  /* About Section */
-  .about-content {
-    max-width: 900px;
-    margin: 0 auto;
-    font-size: 1.1rem;
-    color: #444;
-  }
-  .about-credibility {
-    margin-top: 2rem;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 2rem;
-  }
-  .credibility-item {
-    background: #fff;
-    box-shadow: 0 4px 12px var(--shadow);
-    border-radius: 12px;
-    padding: 1.5rem 2rem;
-    max-width: 260px;
-    text-align: center;
-    user-select: none;
-  }
-  .credibility-item span.icon {
-    font-size: 2.5rem;
-    color: var(--accent-color);
-    margin-bottom: 0.5rem;
-    display: inline-block;
-  }
-  .credibility-item h4 {
-    margin: 0.25rem 0 0.5rem 0;
-    font-size: 1.1rem;
-    font-weight: 700;
-    color: var(--secondary-color);
-  }
-  .credibility-item p {
-    font-size: 0.95rem;
-    color: #666;
-    margin: 0;
-  }
-  /* Process Section */
-  .process-list {
-    max-width: 900px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(240px,1fr));
-    gap: 2rem;
-  }
-  .process-step {
-    background: #fff;
-    border-radius: 14px;
-    padding: 1.75rem 1.75rem 2rem 1.75rem;
-    box-shadow: 0 5px 15px var(--shadow);
-    text-align: center;
-    user-select: none;
-    transition: transform 0.25s ease;
-    cursor: default;
-  }
-  .process-step:hover,
-  .process-step:focus-within {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0,122,90,0.24);
-  }
-  .process-step span.number {
-    display: inline-block;
-    width: 44px;
-    height: 44px;
-    line-height: 44px;
-    background: var(--primary-color);
-    color: #fff;
-    font-weight: 700;
-    font-size: 1.25rem;
-    border-radius: 50%;
-    margin-bottom: 1rem;
-    user-select: none;
-  }
-  .process-step h3 {
-    font-weight: 700;
-    font-size: 1.15rem;
-    color: var(--secondary-color);
+  .service-card h3 {
     margin-bottom: 0.5rem;
   }
-  .process-step p {
-    font-size: 1rem;
-    color: #555;
-    margin: 0;
-  }
-  /* Why Choose Us */
-  .why-grid {
-    max-width: 900px;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(240px,1fr));
-    gap: 1.75rem;
-  }
-  .why-item {
-    background: #fff;
-    box-shadow: 0 5px 15px var(--shadow);
-    border-radius: 14px;
-    padding: 1.75rem 1.75rem 2rem 1.75rem;
-    text-align: center;
-    user-select: none;
-  }
-  .why-item span.icon {
+  .service-icon {
     font-size: 2rem;
     margin-bottom: 0.5rem;
-    color: var(--accent-color);
-    display: inline-block;
+    color: var(--clr-secondary);
   }
-  .why-item h3 {
-    font-weight: 700;
-    color: var(--primary-color);
-    margin-bottom: 0.5rem;
-    font-size: 1.15rem;
-  }
-  .why-item p {
-    font-size: 1rem;
-    color: #444;
-    margin: 0;
-  }
-  /* Testimonials */
-  .testimonials {
-    max-width: 900px;
-    margin: 0 auto;
-  }
-  .testimonial-item {
-    background: #fff;
-    border-radius: 14px;
-    padding: 1.75rem 2rem;
-    box-shadow: 0 5px 15px var(--shadow);
-    margin-bottom: 1.75rem;
-    font-style: italic;
-    position: relative;
-    color: #3a3a3a;
-  }
-  .testimonial-item::before {
-    content: "“";
-    font-size: 3rem;
-    color: var(--accent-color);
-    position: absolute;
-    top: 15px;
-    left: 20px;
-    opacity: 0.15;
-    font-style: normal;
-  }
-  .testimonial-item p {
-    margin: 0 0 1rem 0;
-    line-height: 1.4;
-  }
-  .testimonial-item footer {
-    font-style: normal;
-    font-weight: 600;
-    color: var(--secondary-color);
-    font-size: 0.95rem;
-    text-align: right;
-  }
-  /* Service Area */
-  .service-area-text {
-    max-width: 800px;
-    margin: 0 auto;
+
+  /* About Section */
+  .about {
+    max-width: 700px;
+    margin: 1rem auto 0;
     font-size: 1.05rem;
-    color: #444;
-    text-align: center;
+    color: var(--clr-muted);
   }
-  .service-area-list {
-    margin-top: 1.5rem;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 1rem 2rem;
-    color: var(--primary-color);
-    font-weight: 600;
-    font-size: 1rem;
-  }
-  .service-area-list li {
+  .credibility-list {
+    margin-top: 1rem;
     list-style: none;
-    position: relative;
-    padding-left: 1.35rem;
+    padding-left: 0;
   }
-  .service-area-list li::before {
-    content: "📍";
+  .credibility-list li {
+    margin-bottom: 0.5rem;
+    padding-left: 1.3rem;
+    position: relative;
+  }
+  .credibility-list li::before {
+    content: "✅";
     position: absolute;
     left: 0;
     top: 0;
-    font-size: 1rem;
-    line-height: 1;
   }
-  /* FAQ Section */
+
+  /* Process Section */
+  .process-steps {
+    display: grid;
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+  .process-step {
+    background: white;
+    color: var(--clr-primary);
+    border-radius: 12px;
+    box-shadow: var(--shadow-card);
+    padding: 1rem 1.25rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  .step-number {
+    background: var(--clr-secondary);
+    color: var(--clr-primary);
+    font-weight: 700;
+    font-size: 1.25rem;
+    flex-shrink: 0;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: grid;
+    place-content: center;
+    box-shadow: 0 2px 8px rgb(251 191 36 / 0.7);
+  }
+  .step-content {
+    flex: 1;
+  }
+  .step-content h3 {
+    margin-top: 0;
+    margin-bottom: 0.3rem;
+  }
+
+  /* Why Choose Us */
+  .why-choose-list {
+    max-width: 750px;
+    margin: 1rem auto 0;
+    display: grid;
+    gap: 1rem;
+  }
+  .why-item {
+    background: white;
+    color: var(--clr-primary);
+    border-radius: 14px;
+    box-shadow: var(--shadow-card);
+    display: flex;
+    align-items: center;
+    padding: 1rem 1.25rem;
+    gap: 1rem;
+  }
+  .why-icon {
+    font-size: 1.8rem;
+    flex-shrink: 0;
+    color: var(--clr-accent);
+  }
+  .why-content h4 {
+    margin: 0 0 0.2rem;
+  }
+
+  /* Testimonials */
+  .testimonials {
+    max-width: 750px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  .testimonial-card {
+    background: white;
+    color: var(--clr-text);
+    padding: 1.5rem 1.5rem;
+    border-radius: 16px;
+    box-shadow: var(--shadow-card);
+    font-style: italic;
+    position: relative;
+  }
+  .testimonial-card::before {
+    content: "❝";
+    font-size: 3rem;
+    color: var(--clr-secondary);
+    position: absolute;
+    top: 10px;
+    left: 15px;
+    opacity: 0.25;
+  }
+  .testimonial-author {
+    margin-top: 1rem;
+    font-weight: 700;
+    font-style: normal;
+    color: var(--clr-primary);
+    text-align: right;
+  }
+
+  /* Service Area */
+  .service-area-list {
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 0;
+    list-style: none;
+    color: var(--clr-text);
+    font-weight: 600;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem 1.5rem;
+    justify-content: center;
+  }
+  .service-area-list li::before {
+    content: "📍";
+    margin-right: 0.35rem;
+    color: var(--clr-secondary);
+  }
+
+  /* FAQ */
   .faq {
-    max-width: 850px;
+    max-width: 700px;
     margin: 0 auto;
   }
   .faq-item {
-    background: #fff;
-    border-radius: 12px;
-    box-shadow: 0 5px 15px var(--shadow);
-    margin-bottom: 1.5rem;
-    padding: 1.5rem 2rem;
+    background: white;
+    border-radius: 14px;
+    box-shadow: var(--shadow-card);
+    padding: 1rem 1.25rem;
+    margin-bottom: 1rem;
   }
-  .faq-question {
-    font-weight: 600;
-    color: var(--primary-color);
-    margin-bottom: 0.5rem;
-    font-size: 1.1rem;
+  .faq-item summary {
+    font-weight: 700;
+    cursor: pointer;
+    list-style: none;
+    outline-offset: 2px;
   }
-  .faq-answer {
-    font-size: 1rem;
-    color: #444;
-    line-height: 1.5;
+  .faq-item summary::-webkit-details-marker {
+    display: none;
   }
+  .faq-item summary::after {
+    content: "▼";
+    float: right;
+    font-size: 0.75rem;
+    transform-origin: center;
+    transition: transform 0.3s ease;
+  }
+  .faq-item[open] summary::after {
+    transform: rotateX(180deg);
+  }
+  .faq-item p {
+    margin-top: 0.5rem;
+    font-weight: 400;
+    color: var(--clr-muted);
+  }
+
   /* Contact CTA */
   .contact-cta {
-    background: var(--background-gradient);
-    color: #f0f8f5;
+    background: linear-gradient(135deg, #2563eb, #60a5fa);
+    color: white;
+    border-radius: 16px;
     text-align: center;
     padding: 3rem 1.5rem;
-    border-radius: 12px;
-    max-width: 900px;
-    margin: 0 auto;
-    user-select: none;
+    box-shadow: var(--shadow-strong);
+    margin-top: 3.5rem;
   }
   .contact-cta h2 {
-    font-weight: 700;
-    font-size: 2.2rem;
+    font-size: 2rem;
     margin-bottom: 1rem;
   }
   .contact-cta p {
-    font-size: 1.15rem;
+    font-size: 1.1rem;
     margin-bottom: 2rem;
+    font-weight: 500;
   }
-  .contact-cta a.btn-primary {
-    font-size: 1.25rem;
-    padding: 1.25rem 3rem;
-    box-shadow: 0 8px 22px rgba(80,200,120,0.5);
+  .contact-cta .btn-primary {
+    font-size: 1.2rem;
   }
-  /* Footer */
-  footer {
-    background: #0d3c27;
-    color: #88cda2cc;
-    text-align: center;
-    font-size: 0.9rem;
-    padding: 1rem 1rem 2rem 1rem;
-    user-select: none;
-  }
+
   /* Sticky Call Button */
-  .call-button {
+  .sticky-call {
     position: fixed;
-    right: 1.25rem;
     bottom: 1.25rem;
-    background: var(--accent-color);
-    color: #fff;
+    right: 1.25rem;
+    background: var(--clr-accent);
+    color: var(--clr-primary);
+    font-weight: 700;
+    font-size: 1.4rem;
     border-radius: 50%;
-    width: 58px;
-    height: 58px;
-    box-shadow: 0 10px 25px rgba(80,200,120,0.6);
+    width: 64px;
+    height: 64px;
+    box-shadow: var(--shadow-strong);
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 1.75rem;
-    z-index: 9999;
-    user-select: none;
+    z-index: 1000;
+    text-decoration: none;
     transition: background-color 0.3s ease;
   }
-  .call-button:hover,
-  .call-button:focus {
-    background: #3cb763;
+  .sticky-call:hover, .sticky-call:focus {
+    background: #22c55e;
   }
-  .call-button:focus {
-    outline: 3px solid #b3f1b2;
-    outline-offset: 2px;
+
+  /* Footer */
+  footer.footer {
+    margin-top: 3rem;
+    padding: 1.5rem 1rem 3rem;
+    text-align: center;
+    font-size: 0.85rem;
+    color: var(--clr-muted);
   }
-  /* Responsive typography */
-  @media (min-width: 640px) {
-    header h1 {
+
+  /* Responsive */
+  @media (min-width: 600px) {
+    .services {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    .process-steps {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    .why-choose-list {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .testimonial-card {
+      font-size: 1.125rem;
+    }
+  }
+
+  @media (min-width: 900px) {
+    header.hero {
+      padding-top: 8rem;
+      padding-bottom: 5rem;
+    }
+    header.hero h1 {
       font-size: 3.5rem;
     }
-    header p.lead {
-      font-size: 1.375rem;
-    }
-  }
-  @media (min-width: 900px) {
-    section {
-      padding: 5rem 1.5rem 5rem 1.5rem;
+    .contact-cta h2 {
+      font-size: 2.5rem;
     }
   }
 </style>
 </head>
 <body>
-<header role="banner" aria-label="Hero section">
+
+<header class="hero" role="banner" aria-label="Hero Section">
   <div class="container">
-    <h1>FlowFix Plumbing – Your Trusted Local Plumber in Sydney</h1>
-    <p class="lead">Fast, Reliable Plumbing Services When You Need Them Most</p>
-    <p>At FlowFix Plumbing, we understand how stressful plumbing problems can be. Whether it’s a burst pipe flooding your home or a slow-draining sink disrupting your day, you need a trusted plumber who responds fast and delivers quality work—every time.</p>
-    <p>Based in Sydney, FlowFix Plumbing offers expert plumbing solutions tailored to meet the needs of homeowners and businesses across the area. Our experienced team uses the latest equipment and proven techniques to fix your plumbing issues quickly and efficiently, saving you time, money, and stress.</p>
-    <div class="trust-badges" role="list" aria-label="Our trust and credibility badges">
-      <div class="badge" role="listitem"><span class="icon" aria-hidden="true">⏱️</span> Local &amp; Rapid Response</div>
-      <div class="badge" role="listitem"><span class="icon" aria-hidden="true">✅</span> Licensed &amp; Insured</div>
-      <div class="badge" role="listitem"><span class="icon" aria-hidden="true">💵</span> Transparent Pricing</div>
-      <div class="badge" role="listitem"><span class="icon" aria-hidden="true">🛠️</span> Quality Guarantee</div>
-      <div class="badge" role="listitem"><span class="icon" aria-hidden="true">🤝</span> Customer-Focused</div>
+    <h1>Fluffy Tail Dogs – Where Style Meets Wag</h1>
+    <p>Celebrate your dog's unique charm with our signature straight-cut fluffy tail trims that wag with style and flair.</p>
+    <div class="trust-badges" aria-label="Trusted By">
+      <div class="trust-badge" aria-hidden="true"><span class="icon">🐕</span> Expert Groomers</div>
+      <div class="trust-badge" aria-hidden="true"><span class="icon">⭐</span> 5-Star Reviews</div>
+      <div class="trust-badge" aria-hidden="true"><span class="icon">⏰</span> Fast & Friendly</div>
     </div>
+    <a href="#contact" class="btn-primary" role="button" aria-label="Book your grooming appointment now">Book Now</a>
   </div>
 </header>
 
 <main>
-<section aria-labelledby="services-title">
-  <div class="container">
-    <h2 id="services-title" class="section-title">We Solve Plumbing Problems Like:</h2>
-    <div class="services-grid" role="list">
-      <article class="card" role="listitem" tabindex="0">
-        <h3>Burst Pipes &amp; Leaks</h3>
-        <ul>
-          <li>Burst pipes and pipe leaks</li>
-          <li>Water damage prevention</li>
-          <li>Emergency shut-off and repair</li>
-        </ul>
+  <section class="section container" id="meet-bella" aria-labelledby="meet-bella-title">
+    <h2 id="meet-bella-title">Meet Bella: The Fluffiest Tail in Town</h2>
+    <p>At Fluffy Tail Dogs, we celebrate the unique charm of Bella, our beloved pup known for her remarkably fluffy tail. But this isn’t just any tail — we carefully trim Bella’s tail straight so it wags like a sharp blade through the air, making every wag stylish, swift, and unmistakably cool.</p>
+  </section>
+
+  <section class="section container" id="why-fluffy-tail" aria-labelledby="why-fluffy-tail-title">
+    <h2 id="why-fluffy-tail-title">Why a Fluffy Tail That Cuts Through the Air?</h2>
+    <p><strong>Customer Pain Point:</strong><br />Dog tails are adorable, but sometimes they’re just too fluffy — and not always practical. If you love the fluffy look but want a wag that’s crisp and distinctive, you’re in the right place.</p>
+    <p>Our signature straight-cut trim keeps tails looking neat while enhancing the wagging effect, giving your dog a wag that’s visually striking and full of personality.</p>
+  </section>
+
+  <section class="section container" id="how-we-tailor" aria-labelledby="how-we-tailor-title">
+    <h2 id="how-we-tailor-title">How We Tailor Your Dog’s Tail</h2>
+    <div class="services" role="list">
+      <article class="service-card" role="listitem" tabindex="0">
+        <div class="service-icon" aria-hidden="true">✂️</div>
+        <h3>Precision straight trimming</h3>
+        <p>Enhancing your dog’s natural fluffy tail movement with expert cuts.</p>
       </article>
-      <article class="card" role="listitem" tabindex="0">
-        <h3>Blocked Drains &amp; Toilets</h3>
-        <ul>
-          <li>Drain clearing and unblocking</li>
-          <li>Toilet repairs and replacements</li>
-          <li>High-pressure water jetting</li>
-        </ul>
+      <article class="service-card" role="listitem" tabindex="0">
+        <div class="service-icon" aria-hidden="true">💨</div>
+        <h3>Fluff maintenance</h3>
+        <p>Preserving softness and volume for that irresistible fluffy look.</p>
       </article>
-      <article class="card" role="listitem" tabindex="0">
-        <h3>Hot Water Systems</h3>
-        <ul>
-          <li>Installation of new systems</li>
-          <li>Repairs and maintenance</li>
-          <li>Energy-efficient upgrades</li>
-        </ul>
-      </article>
-      <article class="card" role="listitem" tabindex="0">
-        <h3>Taps &amp; Faucets</h3>
-        <ul>
-          <li>Repairs or replacements</li>
-          <li>Kitchen and bathroom taps</li>
-          <li>Leaking and dripping fixes</li>
-        </ul>
-      </article>
-      <article class="card" role="listitem" tabindex="0">
-        <h3>Sewer Line Services</h3>
-        <ul>
-          <li>Inspections and repairs</li>
-          <li>Pipe relining</li>
-          <li>Preventative maintenance</li>
-        </ul>
-      </article>
-      <article class="card" role="listitem" tabindex="0">
-        <h3>Gas Fitting &amp; Appliances</h3>
-        <ul>
-          <li>Gas fitting &amp; safety checks</li>
-          <li>Appliance installations</li>
-          <li>Compliance &amp; certification</li>
-        </ul>
-      </article>
-      <article class="card" role="listitem" tabindex="0">
-        <h3>Renovations</h3>
-        <ul>
-          <li>Bathroom renovations</li>
-          <li>Kitchen plumbing</li>
-          <li>Stylistic &amp; functional upgrades</li>
-        </ul>
-      </article>
-      <article class="card" role="listitem" tabindex="0">
-        <h3>Maintenance &amp; Inspections</h3>
-        <ul>
-          <li>Routine plumbing maintenance</li>
-          <li>Leak detection &amp; testing</li>
-          <li>System hygiene &amp; safety</li>
-        </ul>
+      <article class="service-card" role="listitem" tabindex="0">
+        <div class="service-icon" aria-hidden="true">🛋️</div>
+        <h3>Comfort-focused approach</h3>
+        <p>Ensuring your dog loves the feel and freedom of their stylish new tail.</p>
       </article>
     </div>
-  </div>
-</section>
+    <p class="about">Whether you want the cut for elegance, function, or just to stand out, we provide gentle, expert grooming that’s all about your dog’s happiness.</p>
+  </section>
 
-<section aria-labelledby="emergency-title" class="container" style="max-width:700px; margin-bottom:4rem; text-align:center;">
-  <h2 id="emergency-title" class="section-title">Emergency Plumbing Services Available 24/7</h2>
-  <p style="font-size:1.125rem; color:#222;">Plumbing emergencies don’t wait for business hours. That’s why FlowFix Plumbing offers 24/7 emergency services. When you call us at any time, day or night, we prioritize fast response and effective solutions to minimize water damage and get your property back to normal.</p>
-</section>
-
-<section aria-labelledby="about-title">
-  <div class="container">
-    <h2 id="about-title" class="section-title">About FlowFix Plumbing</h2>
-    <div class="about-content">
-      <p>FlowFix Plumbing is proud to be Sydney’s reliable, fully licensed, and insured plumbing company. With over 15 years of industry experience, our certified technicians provide long-lasting, quality plumbing repairs and installations. We are committed to clear communication, transparent pricing, and professional workmanship at every stage.</p>
-      <p>Our team undergoes continual training ensuring we bring the latest plumbing techniques and safety standards to every job. We back all our work with trusted warranties and we’re driven by a passion to serve our local community.</p>
-    </div>
-    <div class="about-credibility" role="list" aria-label="Our credentials and certifications">
-      <section class="credibility-item" role="listitem" tabindex="0">
-        <span class="icon" aria-hidden="true">🏅</span>
-        <h4>Licensed &amp; Certified</h4>
-        <p>All plumbers licensed by NSW Fair Trading, fully insured and compliant.</p>
-      </section>
-      <section class="credibility-item" role="listitem" tabindex="0">
-        <span class="icon" aria-hidden="true">📅</span>
-        <h4>15+ Years Experience</h4>
-        <p>Trusted by thousands of Sydney households and businesses since 2008.</p>
-      </section>
-      <section class="credibility-item" role="listitem" tabindex="0">
-        <span class="icon" aria-hidden="true">💬</span>
-        <h4>Customer Rated 4.9/5</h4>
-        <p>Our priority is respectful, clear communication and customer satisfaction.</p>
-      </section>
-      <section class="credibility-item" role="listitem" tabindex="0">
-        <span class="icon" aria-hidden="true">🔧</span>
-        <h4>Quality Workmanship</h4>
-        <p>Solid warranties on labour and parts to secure your peace of mind.</p>
-      </section>
-    </div>
-  </div>
-</section>
-
-<section aria-labelledby="process-title">
-  <div class="container">
-    <h2 id="process-title" class="section-title">How It Works</h2>
-    <div class="process-list">
-      <article class="process-step" tabindex="0">
-        <span class="number" aria-label="Step 1">1</span>
-        <h3>Contact Us</h3>
-        <p>Call or book online with your plumbing issue; 24/7 emergency hotline available.</p>
-      </article>
-      <article class="process-step" tabindex="0">
-        <span class="number" aria-label="Step 2">2</span>
-        <h3>Rapid Response</h3>
-        <p>Our local plumber arrives promptly, assesses the problem, and provides a clear quote.</p>
-      </article>
-      <article class="process-step" tabindex="0">
-        <span class="number" aria-label="Step 3">3</span>
-        <h3>Expert Repairs</h3>
-        <p>We efficiently fix your plumbing issue using quality parts and professional methods.</p>
-      </article>
-      <article class="process-step" tabindex="0">
-        <span class="number" aria-label="Step 4">4</span>
-        <h3>Follow-up &amp; Warranty</h3>
-        <p>We ensure you’re satisfied and back our work with reliable warranties on labour and parts.</p>
-      </article>
-    </div>
-  </div>
-</section>
-
-<section aria-labelledby="why-title">
-  <div class="container">
-    <h2 id="why-title" class="section-title">Why Choose FlowFix Plumbing?</h2>
-    <div class="why-grid" role="list">
-      <article class="why-item" role="listitem" tabindex="0">
-        <span class="icon" aria-hidden="true">🚿</span>
-        <h3>Comprehensive Services</h3>
-        <p>From emergencies to renovations, we handle diverse plumbing needs with expertise.</p>
-      </article>
-      <article class="why-item" role="listitem" tabindex="0">
-        <span class="icon" aria-hidden="true">⏳</span>
-        <h3>Fast &amp; Reliable</h3>
-        <p>We value your time and act quickly without compromising quality in every job.</p>
-      </article>
-      <article class="why-item" role="listitem" tabindex="0">
-        <span class="icon" aria-hidden="true">🔒</span>
-        <h3>Licensed &amp; Insured</h3>
-        <p>Full certification and insurance protect your property and give you peace of mind.</p>
-      </article>
-      <article class="why-item" role="listitem" tabindex="0">
-        <span class="icon" aria-hidden="true">💬</span>
-        <h3>Clear Pricing</h3>
-        <p>No hidden fees. Transparent quotes before work begins are a promise.</p>
-      </article>
-      <article class="why-item" role="listitem" tabindex="0">
-        <span class="icon" aria-hidden="true">👍</span>
-        <h3>Customer Focused</h3>
-        <p>Respectful, honest service with clear communication from start to finish.</p>
-      </article>
-      <article class="why-item" role="listitem" tabindex="0">
-        <span class="icon" aria-hidden="true">🛡️</span>
-        <h3>Quality Guarantee</h3>
-        <p>We stand behind all workmanship with solid warranties and ongoing support.</p>
-      </article>
-    </div>
-  </div>
-</section>
-
-<section aria-labelledby="testimonials-title">
-  <div class="container testimonials">
-    <h2 id="testimonials-title" class="section-title">What Our Customers Say</h2>
-    <article class="testimonial-item" tabindex="0">
-      <p>"FlowFix Plumbing came within 45 minutes when my pipe burst. Professional, friendly, and fixed the leak quickly. Highly recommended!"</p>
-      <footer>– Sarah T., Sydney</footer>
-    </article>
-    <article class="testimonial-item" tabindex="0">
-      <p>"They installed a new hot water system for our home. The team was knowledgeable and gave us a great upfront price. Fantastic experience."</p>
-      <footer>– John D., Sydney</footer>
-    </article>
-    <article class="testimonial-item" tabindex="0">
-      <p>"Excellent customer service and clear communication throughout our bathroom renovation plumbing. The quality was outstanding."</p>
-      <footer>– Emily S., Mosman</footer>
-    </article>
-  </div>
-</section>
-
-<section aria-labelledby="service-area-title">
-  <div class="container">
-    <h2 id="service-area-title" class="section-title">Proudly Serving Sydney and Surrounding Suburbs</h2>
-    <p class="service-area-text">Whether you’re in Parramatta, North Sydney, Bondi, or nearby suburbs, FlowFix Plumbing is your neighbourhood plumbing expert ready to help with any issue—big or small.</p>
-    <ul class="service-area-list" role="list">
-      <li>Parramatta</li>
+  <section class="section container" id="service-area" aria-labelledby="service-area-title">
+    <h2 id="service-area-title">Fast & Friendly Grooming Services in Local Areas</h2>
+    <p>We serve dog owners across <strong>Cammeray</strong>, <strong>Mosman</strong>, and surrounding areas. Expect fast, reliable grooming appointments that fit your busy schedule. Emergency spots available for last-minute grooming needs — because every dog deserves to wag in style!</p>
+    <ul class="service-area-list">
+      <li>Cammeray</li>
+      <li>Mosman</li>
+      <li>Neutral Bay</li>
       <li>North Sydney</li>
-      <li>Bondi</li>
-      <li>Chatswood</li>
-      <li>Manly</li>
-      <li>Newtown</li>
-      <li>Ryde</li>
-      <li>Suburbs Nearby</li>
+      <li>Castlecrag</li>
     </ul>
-  </div>
-</section>
+  </section>
 
-<section aria-labelledby="faq-title">
-  <div class="container faq">
-    <h2 id="faq-title" class="section-title">Frequently Asked Questions (FAQs)</h2>
-    <article class="faq-item" tabindex="0">
-      <div class="faq-question">Q: How quickly can you attend to a plumbing emergency?</div>
-      <div class="faq-answer">A: We offer 24/7 emergency services and typically arrive within 60 minutes for urgent calls in Sydney.</div>
-    </article>
-    <article class="faq-item" tabindex="0">
-      <div class="faq-question">Q: Are your plumbers licensed and insured?</div>
-      <div class="faq-answer">A: Absolutely. All FlowFix Plumbing technicians are fully licensed, insured, and undergo ongoing training.</div>
-    </article>
-    <article class="faq-item" tabindex="0">
-      <div class="faq-question">Q: Do you provide upfront quotes?</div>
-      <div class="faq-answer">A: Yes, we always provide clear, no-obligation quotes before starting any work.</div>
-    </article>
-    <article class="faq-item" tabindex="0">
-      <div class="faq-question">Q: Can you assist with renovations or just repairs?</div>
-      <div class="faq-answer">A: We handle both—you can count on us for renovations, installations, and all types of repair work.</div>
-    </article>
-    <article class="faq-item" tabindex="0">
-      <div class="faq-question">Q: What payment methods do you accept?</div>
-      <div class="faq-answer">A: We accept cash, credit/debit cards, and major electronic payments for your convenience.</div>
-    </article>
-  </div>
-</section>
+  <section class="section container" id="trusted" aria-labelledby="trusted-title">
+    <h2 id="trusted-title">Trusted by Dog Lovers Like You</h2>
+    <div class="testimonials" role="list" aria-live="polite">
+      <article class="testimonial-card" role="listitem" tabindex="0">
+        <p>Bella’s tail looks amazing – sharper and more playful than ever. Thanks for making her wag stand out!</p>
+        <p class="testimonial-author">– Emma Thompson</p>
+      </article>
+      <article class="testimonial-card" role="listitem" tabindex="0">
+        <p>Finally, a groomer who understands how to make fluffy tails both beautiful and unique.</p>
+        <p class="testimonial-author">– James Patel</p>
+      </article>
+    </div>
+  </section>
 
-<section aria-labelledby="contact-title" class="contact-cta">
-  <h2 id="contact-title">Ready to Fix Your Plumbing Problem Today?</h2>
-  <p>Don’t let plumbing issues disrupt your life. Contact FlowFix Plumbing now for fast, expert service from your local trusted plumbers.</p>
-  <p><strong>Call us at <a href="tel:+61298765432" style="color:#e6f7e9; font-weight:700; text-decoration:underline;">(02) 9876 5432</a> or fill out our online booking form for a free quote!</strong></p>
-  <a href="tel:+61298765432" class="btn-primary" aria-label="Call FlowFix Plumbing now">(02) 9876 5432 📞</a>
-</section>
+  <section class="section container" id="how-it-works" aria-labelledby="how-it-works-title">
+    <h2 id="how-it-works-title">How We Tail Your Tail: Our Process</h2>
+    <div class="process-steps" role="list">
+      <article class="process-step" role="listitem" tabindex="0">
+        <div class="step-number" aria-label="Step 1">1</div>
+        <div class="step-content">
+          <h3>Book Your Appointment</h3>
+          <p>Choose a time that suits you or book an emergency spot for last-minute grooming needs.</p>
+        </div>
+      </article>
+      <article class="process-step" role="listitem" tabindex="0">
+        <div class="step-number" aria-label="Step 2">2</div>
+        <div class="step-content">
+          <h3>Gentle Grooming Session</h3>
+          <p>Our experts trim your dog’s tail with precision and care, ensuring comfort and style.</p>
+        </div>
+      </article>
+      <article class="process-step" role="listitem" tabindex="0">
+        <div class="step-number" aria-label="Step 3">3</div>
+        <div class="step-content">
+          <h3>Happy Tail Wagging</h3>
+          <p>Enjoy the sight of your dog wagging their sharp, stylish tail with newfound confidence.</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="section container" id="why-choose-us" aria-labelledby="why-choose-us-title">
+    <h2 id="why-choose-us-title">Why Choose Fluffy Tail Dogs?</h2>
+    <div class="why-choose-list">
+      <div class="why-item" tabindex="0">
+        <div class="why-icon" aria-hidden="true">🌟</div>
+        <div class="why-content">
+          <h4>Experienced Groomers</h4>
+          <p>Years of specialised experience in fluffy tail grooming, with love and precision.</p>
+        </div>
+      </div>
+      <div class="why-item" tabindex="0">
+        <div class="why-icon" aria-hidden="true">❤️</div>
+        <div class="why-content">
+          <h4>Comfort First</h4>
+          <p>We prioritise your dog’s well-being to make every visit enjoyable and stress-free.</p>
+        </div>
+      </div>
+      <div class="why-item" tabindex="0">
+        <div class="why-icon" aria-hidden="true">⏱️</div>
+        <div class="why-content">
+          <h4>Prompt & Reliable</h4>
+          <p>Fast appointments tailored to your schedule, including emergency slots if needed.</p>
+        </div>
+      </div>
+      <div class="why-item" tabindex="0">
+        <div class="why-icon" aria-hidden="true">🎯</div>
+        <div class="why-content">
+          <h4>Unique Signature Style</h4>
+          <p>Our straight-cut tail trim is a one-of-a-kind service that turns heads and wags alike.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section container" id="faq" aria-labelledby="faq-title">
+    <h2 id="faq-title">Questions? We’ve Got Answers.</h2>
+    <div class="faq">
+      <details class="faq-item">
+        <summary>Will the straight tail cut be uncomfortable for my dog?</summary>
+        <p>Not at all. Our skilled groomers use gentle techniques to keep your dog comfortable throughout, with no irritation or discomfort.</p>
+      </details>
+      <details class="faq-item">
+        <summary>How often should I have my dog’s tail trimmed this way?</summary>
+        <p>Typically every 4-6 weeks to maintain the shape and wagging effect.</p>
+      </details>
+      <details class="faq-item">
+        <summary>Is this grooming suitable for all fluffy tail breeds?</summary>
+        <p>Yes, we accommodate popular breeds with fluffy tails including Pomeranians, Samoyeds, and more.</p>
+      </details>
+    </div>
+  </section>
+
+  <section class="section container contact-cta" id="contact" aria-labelledby="contact-title">
+    <h2 id="contact-title">Ready for Your Dog’s Tail to Wag Like a Knife?</h2>
+    <p>Transform your dog’s tail wag into a stylish statement. Book your grooming appointment today and let’s get tails wagging with flair!</p>
+    <a href="tel:+61299998888" class="btn-primary" aria-label="Call us now at (02) 9999 8888">Call Us: (02) 9999 8888</a>
+  </section>
 </main>
 
-<footer>
-  <p>© 2024 FlowFix Plumbing — Quality Plumbing Solutions — Fast Response — Local Service</p>
-  <p>Address: 123 Green Lane, Sydney NSW 2000 | Email: info@flowfixplumbing.com.au | Phone: (02) 9876 5432</p>
-</footer>
+<a href="tel:+61299998888" class="sticky-call" aria-label="Tap to call Fluffy Tail Dogs">(📞)</a>
 
-<a href="tel:+61298765432" class="call-button" aria-label="Call FlowFix Plumbing">(📞)</a>
+<footer class="footer" role="contentinfo">
+  <p><strong>Fluffy Tail Dogs</strong> – Styling Wag. Creating Smiles.</p>
+  <p>Proudly serving Cammeray, Mosman, and surrounding NSW areas.</p>
+  <p>Email: <a href="mailto:info@fluffytaildogs.com.au">info@fluffytaildogs.com.au</a> | Phone: <a href="tel:+61299998888">(02) 9999 8888</a></p>
+  <p>Address: 123 Dogtail Lane, Cammeray NSW 2062, Australia</p>
+</footer>
 
 </body>
 </html>
