@@ -3,612 +3,706 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Fluffy Tail Dogs – Where Style Meets Wag</title>
+<title>OpenClaw AI Solutions | Empowering Australian Businesses with AI</title>
 <style>
-  :root {
-    --clr-primary: #1e3a8a;
-    --clr-secondary: #fbbf24;
-    --clr-accent: #4ade80;
-    --clr-bg: #f9fafb;
-    --clr-text: #1f2937;
-    --clr-muted: #6b7280;
-    --shadow-card: 0 8px 16px rgb(30 58 138 / 0.15);
-    --shadow-strong: 0 4px 24px rgb(30 58 138 / 0.25);
-    --font-sans: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  }
-
-  /* Reset and basics */
+  /* Reset and base */
   *, *::before, *::after {
     box-sizing: border-box;
   }
   body {
-    margin: 0; background: var(--clr-bg); color: var(--clr-text);
-    font-family: var(--font-sans);
+    margin: 0; font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+    color: #222;
+    background: #f9fafb;
     line-height: 1.6;
-    font-size: 1rem;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  a {
+    color: #0078d7;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  a:hover,
+  a:focus {
+    color: #005ea2;
+    outline: none;
   }
   img {
     max-width: 100%;
     height: auto;
     display: block;
   }
-  a {
-    color: var(--clr-primary);
-    text-decoration: none;
-  }
-  a:hover, a:focus {
-    text-decoration: underline;
-  }
-  strong {
-    color: var(--clr-primary);
-  }
-  h1, h2, h3 {
-    color: var(--clr-primary);
+  h1, h2, h3, h4 {
+    margin-top: 0; margin-bottom: 0.5rem;
     font-weight: 700;
-    line-height: 1.2;
-    margin-top: 0;
-  }
-  h1 {
-    font-size: 2.25rem;
-  }
-  h2 {
-    font-size: 1.75rem;
-    margin-bottom: 1rem;
-  }
-  h3 {
-    font-size: 1.25rem;
+    color: #111;
   }
   p {
-    margin-top: 0;
-    margin-bottom: 1.25rem;
+    margin-top: 0; margin-bottom: 1rem;
   }
   ul {
     padding-left: 1.25rem;
-    margin-top: 0; margin-bottom: 1.25rem;
+    margin-top: 0; margin-bottom: 1rem;
   }
-  button, input[type=submit] {
-    cursor: pointer;
+  ul li {
+    margin-bottom: 0.5rem;
+    line-height: 1.4;
+  }
+  button, input, textarea {
     font-family: inherit;
-    font-size: 1rem;
-    font-weight: 600;
-    border: none;
-    border-radius: 6px;
-    padding: 0.75em 1.5em;
-    background: var(--clr-primary);
-    color: white;
-    box-shadow: var(--shadow-strong);
-    transition: background-color 0.3s ease, box-shadow 0.3s ease;
-  }
-  button:hover, input[type=submit]:hover,
-  button:focus, input[type=submit]:focus {
-    background: #174ea6;
-    box-shadow: 0 6px 20px rgb(23 78 166 / 0.5);
-    outline-offset: 3px;
-    outline-color: var(--clr-secondary);
-    outline-style: solid;
   }
 
+  /* Container */
   .container {
-    width: 90vw;
     max-width: 1100px;
     margin-left: auto;
     margin-right: auto;
-  }
-  .section {
-    padding: 3rem 0;
-  }
-  .text-center {
-    text-align: center;
+    padding: 0 1.25rem 3rem;
   }
 
   /* Hero */
   header.hero {
-    background: linear-gradient(to bottom right, #2563ebdd, #60a5faee);
-    color: white;
-    padding: 6rem 1rem 4rem;
+    background: linear-gradient(135deg, #003d66, #0066aa);
+    color: #f0f9ff;
+    padding: 4rem 1.25rem 3.5rem;
     text-align: center;
     position: relative;
-    overflow: hidden;
   }
   header.hero h1 {
-    font-size: clamp(2rem, 6vw, 3rem);
-    max-width: 800px;
-    margin-left: auto;
-    margin-right: auto;
+    font-size: 2.5rem;
+    line-height: 1.1;
+    max-width: 660px;
+    margin: 0 auto 1rem;
+    font-weight: 900;
+    text-shadow: 0 2px 5px rgba(0,0,0,0.3);
   }
   header.hero p {
-    max-width: 600px;
-    margin: 1.5rem auto 0;
-    font-size: 1.2rem;
-    font-weight: 500;
-  }
-  header.hero .btn-primary {
-    margin-top: 2.5rem;
-  }
-
-  /* Trust Badges */
-  .trust-badges {
-    display: flex;
-    justify-content: center;
-    gap: 2rem;
-    margin-top: 1rem;
-    flex-wrap: wrap;
-  }
-  .trust-badge {
-    background: white;
-    color: var(--clr-primary);
-    border-radius: 12px;
-    box-shadow: var(--shadow-card);
-    padding: 0.75rem 1.5rem;
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    font-weight: 600;
-    font-size: 0.95rem;
-    user-select: none;
-  }
-  .trust-badge span.icon {
-    font-size: 1.5rem;
-  }
-
-  /* Service Cards */
-  .services {
-    display: grid;
-    gap: 1.5rem;
-    margin-top: 2rem;
-  }
-  .service-card {
-    background: white;
-    padding: 1.75rem 1.5rem;
-    border-radius: 16px;
-    box-shadow: var(--shadow-card);
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-  .service-card h3 {
-    margin-bottom: 0.5rem;
-  }
-  .service-icon {
-    font-size: 2rem;
-    margin-bottom: 0.5rem;
-    color: var(--clr-secondary);
-  }
-
-  /* About Section */
-  .about {
-    max-width: 700px;
-    margin: 1rem auto 0;
-    font-size: 1.05rem;
-    color: var(--clr-muted);
-  }
-  .credibility-list {
-    margin-top: 1rem;
-    list-style: none;
-    padding-left: 0;
-  }
-  .credibility-list li {
-    margin-bottom: 0.5rem;
-    padding-left: 1.3rem;
-    position: relative;
-  }
-  .credibility-list li::before {
-    content: "✅";
-    position: absolute;
-    left: 0;
-    top: 0;
-  }
-
-  /* Process Section */
-  .process-steps {
-    display: grid;
-    gap: 1.5rem;
-    margin-top: 2rem;
-  }
-  .process-step {
-    background: white;
-    color: var(--clr-primary);
-    border-radius: 12px;
-    box-shadow: var(--shadow-card);
-    padding: 1rem 1.25rem;
-    display: flex;
-    align-items: flex-start;
-    gap: 1rem;
-  }
-  .step-number {
-    background: var(--clr-secondary);
-    color: var(--clr-primary);
-    font-weight: 700;
     font-size: 1.25rem;
-    flex-shrink: 0;
-    width: 36px;
-    height: 36px;
-    border-radius: 50%;
-    display: grid;
-    place-content: center;
-    box-shadow: 0 2px 8px rgb(251 191 36 / 0.7);
+    max-width: 600px;
+    margin: 0 auto 2.5rem;
+    font-weight: 500;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.3);
   }
-  .step-content {
-    flex: 1;
+  .btn-primary {
+    background: #00aaff;
+    color: white;
+    border: none;
+    padding: 0.85rem 2rem;
+    font-size: 1.1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    box-shadow: 0 6px 12px -4px #00aaffcc;
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+    font-weight: 600;
   }
-  .step-content h3 {
-    margin-top: 0;
-    margin-bottom: 0.3rem;
+  .btn-primary:hover,
+  .btn-primary:focus {
+    background: #008ecc;
+    box-shadow: 0 8px 20px -6px #008ecccc;
+    outline: none;
+  }
+
+  /* Section Titles */
+  section h2 {
+    font-size: 2rem;
+    text-align: center;
+    color: #003d66;
+    margin-bottom: 1rem;
+    font-weight: 800;
+  }
+  section h3 {
+    font-size: 1.25rem;
+    color: #00497c;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+  }
+
+  /* Section style */
+  section {
+    padding: 3rem 1.25rem 5rem;
   }
 
   /* Why Choose Us */
   .why-choose-list {
-    max-width: 750px;
-    margin: 1rem auto 0;
+    max-width: 880px;
+    margin: 0 auto;
     display: grid;
-    gap: 1rem;
+    grid-template-columns: repeat(auto-fit,minmax(240px,1fr));
+    gap: 1.5rem 2rem;
+    list-style: none;
+    padding: 0;
   }
-  .why-item {
+  .why-choose-list li {
     background: white;
-    color: var(--clr-primary);
+    border-radius: 12px;
+    padding: 1.5rem 1.8rem;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+    font-weight: 600;
+    color: #00497c;
+    position: relative;
+    padding-left: 2.75rem;
+  }
+  .why-choose-list li::before {
+    content: "⭐";
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 1.25rem;
+  }
+
+  /* Challenges */
+  .challenges {
+    max-width: 900px;
+    margin: 0 auto;
+    background: #e3f1ff;
     border-radius: 14px;
-    box-shadow: var(--shadow-card);
+    padding: 2rem 2.5rem;
+    box-shadow: 0 0 30px rgba(0,102,170,0.1);
+  }
+  .challenges ul {
+    list-style-type: disc;
+    margin-left: 1.3rem;
+    color: #094a7e;
+    font-weight: 500;
+  }
+  .challenges h3 {
+    color: #075788;
+    margin-bottom: 1rem;
+  }
+
+  /* Service Cards */
+  .services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+    gap: 2rem;
+    max-width: 960px;
+    margin: 0 auto;
+  }
+  .service-card {
+    background: white;
+    border-radius: 14px;
+    padding: 1.75rem 2rem;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.07);
+    transition: box-shadow 0.3s ease;
+  }
+  .service-card:hover,
+  .service-card:focus-within {
+    box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+  }
+  .service-card h4 {
+    color: #005ea2;
+    margin-bottom: 0.5rem;
+    font-weight: 800;
+  }
+  .service-card p {
+    color: #222f46;
+    font-weight: 500;
+    line-height: 1.4;
+  }
+
+  /* Local Service Area */
+  .service-area-list {
+    max-width: 680px;
+    margin: 0 auto;
     display: flex;
-    align-items: center;
-    padding: 1rem 1.25rem;
-    gap: 1rem;
+    flex-wrap: wrap;
+    gap: 1rem 2rem;
+    color: #004269;
+    font-weight: 600;
+    justify-content: center;
   }
-  .why-icon {
-    font-size: 1.8rem;
-    flex-shrink: 0;
-    color: var(--clr-accent);
-  }
-  .why-content h4 {
-    margin: 0 0 0.2rem;
+  .service-area-list li {
+    background: linear-gradient(135deg, #00aaff 0%, #0077cc 100%);
+    color: white;
+    padding: 0.45rem 1rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    font-size: 1rem;
+    user-select: none;
   }
 
   /* Testimonials */
   .testimonials {
-    max-width: 750px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 2rem;
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
+    max-width: 820px;
+    margin: 0 auto;
   }
-  .testimonial-card {
+  blockquote {
     background: white;
-    color: var(--clr-text);
-    padding: 1.5rem 1.5rem;
     border-radius: 16px;
-    box-shadow: var(--shadow-card);
+    padding: 1.8rem 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.08);
     font-style: italic;
+    color: #093445;
     position: relative;
   }
-  .testimonial-card::before {
-    content: "❝";
-    font-size: 3rem;
-    color: var(--clr-secondary);
+  blockquote::before {
+    content: "💬";
+    font-size: 2.5rem;
     position: absolute;
-    top: 10px;
-    left: 15px;
-    opacity: 0.25;
+    top: 12px;
+    left: 14px;
   }
-  .testimonial-author {
-    margin-top: 1rem;
+  blockquote footer {
+    margin-top: 1.3rem;
     font-weight: 700;
     font-style: normal;
-    color: var(--clr-primary);
-    text-align: right;
-  }
-
-  /* Service Area */
-  .service-area-list {
-    max-width: 700px;
-    margin: 0 auto;
-    padding: 0;
-    list-style: none;
-    color: var(--clr-text);
-    font-weight: 600;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem 1.5rem;
-    justify-content: center;
-  }
-  .service-area-list li::before {
-    content: "📍";
-    margin-right: 0.35rem;
-    color: var(--clr-secondary);
+    color: #00497c;
   }
 
   /* FAQ */
   .faq {
-    max-width: 700px;
+    max-width: 900px;
     margin: 0 auto;
   }
   .faq-item {
     background: white;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
     border-radius: 14px;
-    box-shadow: var(--shadow-card);
-    padding: 1rem 1.25rem;
     margin-bottom: 1rem;
+    padding: 1.25rem 1.75rem;
   }
   .faq-item summary {
-    font-weight: 700;
     cursor: pointer;
+    font-weight: 700;
+    font-size: 1.05rem;
+    position: relative;
     list-style: none;
-    outline-offset: 2px;
   }
   .faq-item summary::-webkit-details-marker {
     display: none;
   }
-  .faq-item summary::after {
-    content: "▼";
-    float: right;
-    font-size: 0.75rem;
-    transform-origin: center;
-    transition: transform 0.3s ease;
+  .faq-item::marker {
+    content: none;
   }
-  .faq-item[open] summary::after {
-    transform: rotateX(180deg);
+  .faq-item summary::after {
+    content: "➕";
+    position: absolute;
+    right: 0;
+    font-size: 1.4rem;
+    line-height: 1;
+    transition: transform 0.3s ease;
+    user-select: none;
+  }
+  details[open] summary::after {
+    content: "➖";
+    transform: rotate(180deg);
   }
   .faq-item p {
-    margin-top: 0.5rem;
-    font-weight: 400;
-    color: var(--clr-muted);
+    margin: 0.75rem 0 0;
+    font-weight: 500;
+    color: #222f46;
   }
 
-  /* Contact CTA */
-  .contact-cta {
-    background: linear-gradient(135deg, #2563eb, #60a5fa);
-    color: white;
-    border-radius: 16px;
-    text-align: center;
-    padding: 3rem 1.5rem;
-    box-shadow: var(--shadow-strong);
-    margin-top: 3.5rem;
-  }
-  .contact-cta h2 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-  }
-  .contact-cta p {
-    font-size: 1.1rem;
-    margin-bottom: 2rem;
+  /* About */
+  .about-text {
+    max-width: 850px;
+    margin: 0 auto;
     font-weight: 500;
+    color: #1b3954;
+    line-height: 1.55;
   }
-  .contact-cta .btn-primary {
+
+  /* How It Works / Process */
+  .process-steps {
+    max-width: 900px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(240px,1fr));
+    gap: 2rem;
+  }
+  .process-step {
+    background: white;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.08);
+    border-radius: 16px;
+    padding: 2rem 1.8rem 2.3rem;
+    text-align: center;
+    position: relative;
+  }
+  .process-step::before {
+    content: attr(data-step);
+    position: absolute;
+    top: 18px;
+    left: 18px;
+    background: #0077cc;
+    color: white;
+    border-radius: 50%;
+    width: 38px;
+    height: 38px;
+    line-height: 38px;
+    font-weight: 700;
+    font-size: 1.15rem;
+    user-select: none;
+  }
+  .process-step h4 {
+    margin-top: 0;
+    color: #005ea2;
+    font-weight: 800;
+    margin-bottom: 0.8rem;
+  }
+  .process-step p {
+    color: #222f46;
+    font-weight: 500;
+    line-height: 1.4;
+  }
+
+  /* Contact / CTA */
+  section.contact-cta {
+    background: linear-gradient(135deg, #005ea2, #00aaff);
+    color: white;
+    padding: 3.5rem 1.25rem 5rem;
+    text-align: center;
+  }
+  section.contact-cta h2 {
+    font-weight: 900;
+    font-size: 2.3rem;
+    margin-bottom: 0.6rem;
+    text-shadow: 0 2px 8px rgba(0,0,0,0.35);
+  }
+  section.contact-cta p {
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin: 0 auto 2rem;
+    font-weight: 600;
+    text-shadow: 0 1px 4px rgba(0,0,0,0.25);
+  }
+  section.contact-cta .contact-info {
+    font-weight: 600;
+    margin-bottom: 1.5rem;
     font-size: 1.2rem;
+    letter-spacing: 0.04em;
+  }
+  section.contact-cta .contact-info span {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  section.contact-cta a.quote-btn {
+    display: inline-block;
+    background: #fff;
+    color: #0077cc;
+    font-weight: 700;
+    font-size: 1.15rem;
+    padding: 0.85rem 2rem;
+    border-radius: 8px;
+    box-shadow: 0 8px 22px -6px #0077ccaa;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    text-decoration: none;
+  }
+  section.contact-cta a.quote-btn:hover,
+  section.contact-cta a.quote-btn:focus {
+    background: #d6f0ff;
+    color: #00497a;
+    outline: none;
+  }
+
+  /* Trust Badges */
+  .trust-badges {
+    max-width: 900px;
+    margin: 3rem auto 0;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.8rem 3rem;
+  }
+  .badge {
+    background: #003d66;
+    color: white;
+    font-weight: 700;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    padding: 0.7rem 1.4rem;
+    border-radius: 20px;
+    box-shadow: 0 4px 14px rgba(0,61,102,0.35);
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    user-select: none;
+  }
+
+  /* Icons for badges */
+  .badge svg,
+  .badge span.emoji {
+    font-size: 1.3rem;
+    display: inline-block;
   }
 
   /* Sticky Call Button */
   .sticky-call {
     position: fixed;
-    bottom: 1.25rem;
-    right: 1.25rem;
-    background: var(--clr-accent);
-    color: var(--clr-primary);
+    bottom: 22px;
+    right: 22px;
+    background: #00aaff;
+    color: white;
+    padding: 0.85rem 1.2rem;
+    border-radius: 50px;
     font-weight: 700;
-    font-size: 1.4rem;
-    border-radius: 50%;
-    width: 64px;
-    height: 64px;
-    box-shadow: var(--shadow-strong);
+    font-size: 1.15rem;
+    box-shadow: 0 8px 30px -8px #00aaffcc;
+    z-index: 9999;
     display: flex;
     align-items: center;
-    justify-content: center;
-    z-index: 1000;
-    text-decoration: none;
-    transition: background-color 0.3s ease;
+    gap: 0.55rem;
+    cursor: pointer;
+    user-select: none;
+    transition: background 0.3s ease;
   }
-  .sticky-call:hover, .sticky-call:focus {
-    background: #22c55e;
+  .sticky-call:hover,
+  .sticky-call:focus {
+    background: #008ecc;
+    outline: none;
   }
-
-  /* Footer */
-  footer.footer {
-    margin-top: 3rem;
-    padding: 1.5rem 1rem 3rem;
-    text-align: center;
-    font-size: 0.85rem;
-    color: var(--clr-muted);
+  .sticky-call span.emoji {
+    font-size: 1.5rem;
   }
 
-  /* Responsive */
-  @media (min-width: 600px) {
-    .services {
-      grid-template-columns: repeat(3, 1fr);
-    }
-    .process-steps {
-      grid-template-columns: repeat(3, 1fr);
-    }
-    .why-choose-list {
-      grid-template-columns: repeat(2, 1fr);
-    }
-    .testimonial-card {
-      font-size: 1.125rem;
-    }
-  }
-
-  @media (min-width: 900px) {
-    header.hero {
-      padding-top: 8rem;
-      padding-bottom: 5rem;
-    }
+  /* Responsive typography */
+  @media (min-width: 600px){
     header.hero h1 {
-      font-size: 3.5rem;
+      font-size: 3rem;
     }
-    .contact-cta h2 {
-      font-size: 2.5rem;
+    header.hero p {
+      font-size: 1.4rem;
+    }
+  }
+
+  @media (min-width: 900px){
+    section h2 {
+      font-size: 2.4rem;
+    }
+    section.contact-cta h2 {
+      font-size: 2.8rem;
     }
   }
 </style>
 </head>
 <body>
 
-<header class="hero" role="banner" aria-label="Hero Section">
+<header class="hero" role="banner" aria-label="Hero section">
   <div class="container">
-    <h1>Fluffy Tail Dogs – Where Style Meets Wag</h1>
-    <p>Celebrate your dog's unique charm with our signature straight-cut fluffy tail trims that wag with style and flair.</p>
-    <div class="trust-badges" aria-label="Trusted By">
-      <div class="trust-badge" aria-hidden="true"><span class="icon">🐕</span> Expert Groomers</div>
-      <div class="trust-badge" aria-hidden="true"><span class="icon">⭐</span> 5-Star Reviews</div>
-      <div class="trust-badge" aria-hidden="true"><span class="icon">⏰</span> Fast & Friendly</div>
-    </div>
-    <a href="#contact" class="btn-primary" role="button" aria-label="Book your grooming appointment now">Book Now</a>
+    <h1>OpenClaw AI Solutions</h1>
+    <p><em>Empowering Australian Businesses with Advanced AI Technology</em></p>
+    <p style="font-size:1.35rem; max-width:600px; margin-left:auto; margin-right:auto; font-weight:600; text-shadow:0 2px 6px rgba(0,30,60,0.25);">
+      Revolutionize Your Business with Cutting-Edge AI Solutions
+    </p>
+    <p style="margin-bottom:3rem; max-width:580px; margin-left:auto; margin-right:auto; font-weight:400; font-size:1.1rem;">
+      Unlock the true potential of your business with OpenClaw AI Solutions — Australia’s trusted partner
+      in artificial intelligence technology. Whether you want to automate processes, enhance customer experiences, or gain insightful data analytics,
+      our expert team provides tailored AI implementation and upgrade services designed to drive growth and innovation.
+    </p>
+    <a href="#contact" class="btn-primary" aria-label="Contact OpenClaw AI Solutions today">Contact OpenClaw AI Solutions Today</a>
   </div>
 </header>
 
 <main>
-  <section class="section container" id="meet-bella" aria-labelledby="meet-bella-title">
-    <h2 id="meet-bella-title">Meet Bella: The Fluffiest Tail in Town</h2>
-    <p>At Fluffy Tail Dogs, we celebrate the unique charm of Bella, our beloved pup known for her remarkably fluffy tail. But this isn’t just any tail — we carefully trim Bella’s tail straight so it wags like a sharp blade through the air, making every wag stylish, swift, and unmistakably cool.</p>
-  </section>
-
-  <section class="section container" id="why-fluffy-tail" aria-labelledby="why-fluffy-tail-title">
-    <h2 id="why-fluffy-tail-title">Why a Fluffy Tail That Cuts Through the Air?</h2>
-    <p><strong>Customer Pain Point:</strong><br />Dog tails are adorable, but sometimes they’re just too fluffy — and not always practical. If you love the fluffy look but want a wag that’s crisp and distinctive, you’re in the right place.</p>
-    <p>Our signature straight-cut trim keeps tails looking neat while enhancing the wagging effect, giving your dog a wag that’s visually striking and full of personality.</p>
-  </section>
-
-  <section class="section container" id="how-we-tailor" aria-labelledby="how-we-tailor-title">
-    <h2 id="how-we-tailor-title">How We Tailor Your Dog’s Tail</h2>
-    <div class="services" role="list">
-      <article class="service-card" role="listitem" tabindex="0">
-        <div class="service-icon" aria-hidden="true">✂️</div>
-        <h3>Precision straight trimming</h3>
-        <p>Enhancing your dog’s natural fluffy tail movement with expert cuts.</p>
-      </article>
-      <article class="service-card" role="listitem" tabindex="0">
-        <div class="service-icon" aria-hidden="true">💨</div>
-        <h3>Fluff maintenance</h3>
-        <p>Preserving softness and volume for that irresistible fluffy look.</p>
-      </article>
-      <article class="service-card" role="listitem" tabindex="0">
-        <div class="service-icon" aria-hidden="true">🛋️</div>
-        <h3>Comfort-focused approach</h3>
-        <p>Ensuring your dog loves the feel and freedom of their stylish new tail.</p>
-      </article>
-    </div>
-    <p class="about">Whether you want the cut for elegance, function, or just to stand out, we provide gentle, expert grooming that’s all about your dog’s happiness.</p>
-  </section>
-
-  <section class="section container" id="service-area" aria-labelledby="service-area-title">
-    <h2 id="service-area-title">Fast & Friendly Grooming Services in Local Areas</h2>
-    <p>We serve dog owners across <strong>Cammeray</strong>, <strong>Mosman</strong>, and surrounding areas. Expect fast, reliable grooming appointments that fit your busy schedule. Emergency spots available for last-minute grooming needs — because every dog deserves to wag in style!</p>
-    <ul class="service-area-list">
-      <li>Cammeray</li>
-      <li>Mosman</li>
-      <li>Neutral Bay</li>
-      <li>North Sydney</li>
-      <li>Castlecrag</li>
-    </ul>
-  </section>
-
-  <section class="section container" id="trusted" aria-labelledby="trusted-title">
-    <h2 id="trusted-title">Trusted by Dog Lovers Like You</h2>
-    <div class="testimonials" role="list" aria-live="polite">
-      <article class="testimonial-card" role="listitem" tabindex="0">
-        <p>Bella’s tail looks amazing – sharper and more playful than ever. Thanks for making her wag stand out!</p>
-        <p class="testimonial-author">– Emma Thompson</p>
-      </article>
-      <article class="testimonial-card" role="listitem" tabindex="0">
-        <p>Finally, a groomer who understands how to make fluffy tails both beautiful and unique.</p>
-        <p class="testimonial-author">– James Patel</p>
-      </article>
+  <section aria-labelledby="why-choose-title" class="why-choose" id="why-choose">
+    <div class="container">
+      <h2 id="why-choose-title">Why Choose OpenClaw AI Solutions?</h2>
+      <ul class="why-choose-list">
+        <li><strong>Future-Proof Your Business:</strong> Stay ahead of competitors by integrating the latest AI advancements.</li>
+        <li><strong>Local Expertise:</strong> Proudly serving businesses across Sydney, Melbourne, Brisbane, Perth, and Adelaide.</li>
+        <li><strong>Fast, Reliable Service:</strong> Get quick consultation and implementation to minimize downtime.</li>
+        <li><strong>Transparent Process:</strong> Clear communication and no hidden fees.</li>
+        <li><strong>Trusted by Industry Leaders:</strong> Partnered with Australian SMEs, startups, and enterprises.</li>
+        <li><strong>Comprehensive Support:</strong> Training, maintenance, and emergency troubleshooting.</li>
+      </ul>
     </div>
   </section>
 
-  <section class="section container" id="how-it-works" aria-labelledby="how-it-works-title">
-    <h2 id="how-it-works-title">How We Tail Your Tail: Our Process</h2>
-    <div class="process-steps" role="list">
-      <article class="process-step" role="listitem" tabindex="0">
-        <div class="step-number" aria-label="Step 1">1</div>
-        <div class="step-content">
-          <h3>Book Your Appointment</h3>
-          <p>Choose a time that suits you or book an emergency spot for last-minute grooming needs.</p>
-        </div>
-      </article>
-      <article class="process-step" role="listitem" tabindex="0">
-        <div class="step-number" aria-label="Step 2">2</div>
-        <div class="step-content">
-          <h3>Gentle Grooming Session</h3>
-          <p>Our experts trim your dog’s tail with precision and care, ensuring comfort and style.</p>
-        </div>
-      </article>
-      <article class="process-step" role="listitem" tabindex="0">
-        <div class="step-number" aria-label="Step 3">3</div>
-        <div class="step-content">
-          <h3>Happy Tail Wagging</h3>
-          <p>Enjoy the sight of your dog wagging their sharp, stylish tail with newfound confidence.</p>
-        </div>
-      </article>
+  <section class="challenges" aria-labelledby="challenges-title">
+    <div class="container">
+      <h3 id="challenges-title">Common Challenges Our Clients Face</h3>
+      <ul>
+        <li>Confusion over where and how to apply AI upgrades effectively</li>
+        <li>Outdated systems that limit business scalability</li>
+        <li>Lack of in-house AI expertise to implement best solutions</li>
+        <li>Concerns about downtime or interruptions during upgrades</li>
+        <li>Difficulty integrating AI with existing workflows and platforms</li>
+      </ul>
     </div>
   </section>
 
-  <section class="section container" id="why-choose-us" aria-labelledby="why-choose-us-title">
-    <h2 id="why-choose-us-title">Why Choose Fluffy Tail Dogs?</h2>
-    <div class="why-choose-list">
-      <div class="why-item" tabindex="0">
-        <div class="why-icon" aria-hidden="true">🌟</div>
-        <div class="why-content">
-          <h4>Experienced Groomers</h4>
-          <p>Years of specialised experience in fluffy tail grooming, with love and precision.</p>
-        </div>
-      </div>
-      <div class="why-item" tabindex="0">
-        <div class="why-icon" aria-hidden="true">❤️</div>
-        <div class="why-content">
-          <h4>Comfort First</h4>
-          <p>We prioritise your dog’s well-being to make every visit enjoyable and stress-free.</p>
-        </div>
-      </div>
-      <div class="why-item" tabindex="0">
-        <div class="why-icon" aria-hidden="true">⏱️</div>
-        <div class="why-content">
-          <h4>Prompt & Reliable</h4>
-          <p>Fast appointments tailored to your schedule, including emergency slots if needed.</p>
-        </div>
-      </div>
-      <div class="why-item" tabindex="0">
-        <div class="why-icon" aria-hidden="true">🎯</div>
-        <div class="why-content">
-          <h4>Unique Signature Style</h4>
-          <p>Our straight-cut tail trim is a one-of-a-kind service that turns heads and wags alike.</p>
-        </div>
+  <section aria-labelledby="services-title" id="services">
+    <div class="container">
+      <h2 id="services-title">Our Services</h2>
+      <div class="services-grid" role="list">
+        <article class="service-card" role="listitem" tabindex="0">
+          <h4>AI System Upgrades &amp; Integration</h4>
+          <p>Seamlessly update your current AI platforms, including natural language models, automation tools, and predictive analytics.</p>
+        </article>
+        <article class="service-card" role="listitem" tabindex="0">
+          <h4>Custom AI Development</h4>
+          <p>Build bespoke AI solutions that align with your unique business needs.</p>
+        </article>
+        <article class="service-card" role="listitem" tabindex="0">
+          <h4>Ongoing AI Support &amp; Maintenance</h4>
+          <p>Ensure your AI systems run smoothly with regular health checks and rapid issue resolution.</p>
+        </article>
+        <article class="service-card" role="listitem" tabindex="0">
+          <h4>AI Training Workshops</h4>
+          <p>Empower your team with practical knowledge to maximize AI benefits.</p>
+        </article>
+        <article class="service-card" role="listitem" tabindex="0">
+          <h4>Emergency AI Issue Resolution</h4>
+          <p>Fast-response troubleshooting when your AI workflows face unexpected disruptions.</p>
+        </article>
       </div>
     </div>
   </section>
 
-  <section class="section container" id="faq" aria-labelledby="faq-title">
-    <h2 id="faq-title">Questions? We’ve Got Answers.</h2>
-    <div class="faq">
+  <section aria-labelledby="service-area-title" class="service-area">
+    <div class="container">
+      <h2 id="service-area-title">Local Service Area</h2>
+      <p style="text-align:center; max-width:700px; margin-left:auto; margin-right:auto; color:#004269; font-weight:600;">
+        We proudly serve businesses across Australia, specializing in:
+      </p>
+      <ul class="service-area-list" aria-label="Service area cities">
+        <li>Sydney</li>
+        <li>Melbourne</li>
+        <li>Brisbane</li>
+        <li>Perth</li>
+        <li>Adelaide</li>
+        <li>Regional and remote areas upon request</li>
+      </ul>
+    </div>
+  </section>
+
+  <section aria-labelledby="testimonials-title" class="testimonials" id="testimonials">
+    <div class="container">
+      <h2 id="testimonials-title">Hear From Our Clients</h2>
+      <blockquote tabindex="0">
+        <p>"OpenClaw transformed how our customer service operates. Their quick response during an urgent upgrade saved us critical downtime."</p>
+        <footer>— Sarah M., CTO, BlueWave Logistics</footer>
+      </blockquote>
+      <blockquote tabindex="0">
+        <p>"The team’s knowledge of AI and how to implement it locally was exceptional. We now have a competitive edge in the market."</p>
+        <footer>— David L., Founder, GreenTech Innovations</footer>
+      </blockquote>
+    </div>
+  </section>
+
+  <section aria-labelledby="faq-title" class="faq">
+    <div class="container">
+      <h2 id="faq-title">Frequently Asked Questions</h2>
+
       <details class="faq-item">
-        <summary>Will the straight tail cut be uncomfortable for my dog?</summary>
-        <p>Not at all. Our skilled groomers use gentle techniques to keep your dog comfortable throughout, with no irritation or discomfort.</p>
+        <summary>Can I use existing AI frameworks like those from OpenAI’s GitHub repository to upgrade my systems?</summary>
+        <p>Absolutely! We specialize in integrating and upgrading AI solutions, including open-source frameworks like OpenAI’s models, tailored to your business needs.</p>
       </details>
+
       <details class="faq-item">
-        <summary>How often should I have my dog’s tail trimmed this way?</summary>
-        <p>Typically every 4-6 weeks to maintain the shape and wagging effect.</p>
+        <summary>How fast can you respond to emergency AI system issues?</summary>
+        <p>We offer priority support with a typical response time under 2 hours for emergencies.</p>
       </details>
+
       <details class="faq-item">
-        <summary>Is this grooming suitable for all fluffy tail breeds?</summary>
-        <p>Yes, we accommodate popular breeds with fluffy tails including Pomeranians, Samoyeds, and more.</p>
+        <summary>Do I need prior AI knowledge to work with your team?</summary>
+        <p>Not at all. We guide you through every step and provide training to ensure you understand how the upgrade improves your business.</p>
+      </details>
+
+      <details class="faq-item">
+        <summary>Is support available outside standard business hours?</summary>
+        <p>Yes, we provide after-hours support for critical issues to keep your operations running smoothly.</p>
       </details>
     </div>
   </section>
 
-  <section class="section container contact-cta" id="contact" aria-labelledby="contact-title">
-    <h2 id="contact-title">Ready for Your Dog’s Tail to Wag Like a Knife?</h2>
-    <p>Transform your dog’s tail wag into a stylish statement. Book your grooming appointment today and let’s get tails wagging with flair!</p>
-    <a href="tel:+61299998888" class="btn-primary" aria-label="Call us now at (02) 9999 8888">Call Us: (02) 9999 8888</a>
+  <section aria-labelledby="about-title" class="about" id="about" style="padding-bottom:4rem;">
+    <div class="container">
+      <h2 id="about-title">About OpenClaw AI Solutions</h2>
+      <p class="about-text">
+        OpenClaw AI Solutions is a proudly Australian-owned business dedicated to helping local companies leverage the power of artificial intelligence.
+        Our expert team has decades of combined experience delivering tailor-made AI upgrades and solutions that unlock new avenues for growth.
+        Trusted by SMEs, startups, and large enterprises alike, we combine innovation with transparency and support so your business can scale confidently.
+      </p>
+    </div>
+  </section>
+
+  <section aria-labelledby="process-title" class="process" id="process">
+    <div class="container">
+      <h2 id="process-title">Our Process: How It Works</h2>
+      <div class="process-steps" role="list">
+        <article class="process-step" role="listitem" data-step="1" tabindex="0">
+          <h4>Consultation &amp; Assessment</h4>
+          <p>We analyze your current systems and identify the best AI opportunities aligned with your goals.</p>
+        </article>
+        <article class="process-step" role="listitem" data-step="2" tabindex="0">
+          <h4>Custom Solution Design</h4>
+          <p>Our experts craft tailored AI development or integration plans that fit your unique business environment.</p>
+        </article>
+        <article class="process-step" role="listitem" data-step="3" tabindex="0">
+          <h4>Fast Implementation</h4>
+          <p>We deploy upgrades with minimal downtime, ensuring seamless integration and validation.</p>
+        </article>
+        <article class="process-step" role="listitem" data-step="4" tabindex="0">
+          <h4>Training &amp; Support</h4>
+          <p>We provide ongoing maintenance, emergency support, and training workshops to empower your team.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section aria-label="Trusted by" class="trust-badges" aria-describedby="trust-desc">
+    <div class="container" style="max-width:1100px;">
+      <span id="trust-desc" class="sr-only">Trust badges indicating key trusted qualities and partnerships</span>
+      <div class="badge" aria-label="Trusted Australian Business">🇦🇺 Trusted Australian Business</div>
+      <div class="badge" aria-label="100% Transparent Process">🔍 100% Transparent Process</div>
+      <div class="badge" aria-label="Fast Response Times">⏱ Fast Response Times</div>
+      <div class="badge" aria-label="Local Sydney, Melbourne, Brisbane, Perth, Adelaide">📍 Local Sydney, Melbourne, Brisbane, Perth, Adelaide</div>
+      <div class="badge" aria-label="Industry Leader Partnerships">🤝 Industry Leader Partnerships</div>
+      <div class="badge" aria-label="Comprehensive Support & Training">📚 Comprehensive Support & Training</div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact-cta" aria-labelledby="contact-title">
+    <div class="container">
+      <h2 id="contact-title">Ready to Upgrade Your AI System and Propel Your Business Forward?</h2>
+      <p>Contact OpenClaw AI Solutions Today! Let’s discuss your needs and tailor a solution that works best for you.</p>
+      <div class="contact-info" role="contentinfo" aria-live="polite">
+        <p><span aria-hidden="true" class="emoji">📞</span> Phone: <a href="tel:1300555123" aria-label="Call OpenClaw AI Solutions at 1300 555 123" style="color:#fff; font-weight:700;">1300 555 123</a></p>
+        <p><span aria-hidden="true" class="emoji">📧</span> Email: <a href="mailto:contact@openclawai.com.au" aria-label="Email OpenClaw AI Solutions" style="color:#fff; font-weight:700;">contact@openclawai.com.au</a></p>
+      </div>
+      <a href="#quote-form" class="quote-btn" aria-label="Go to Instant Quote Form">Instant Quote Form</a>
+    </div>
+  </section>
+
+  <section id="quote-form" aria-labelledby="quote-title" style="padding: 4rem 1.25rem;">
+    <div class="container" style="max-width:600px; margin-left:auto; margin-right:auto;">
+      <h2 id="quote-title" style="color:#003d66; font-weight:800; margin-bottom:1.5rem;">Instant Quote Form</h2>
+      <form action="#" method="POST" aria-label="Request an instant quote from OpenClaw AI Solutions" novalidate>
+        <label for="name" style="font-weight:700; color:#003d66; display:block; margin-bottom:0.25rem;">Full Name</label>
+        <input type="text" id="name" name="name" required placeholder="Jane Doe" style="width:100%; padding:0.55rem 0.8rem; margin-bottom:1.5rem; border:1px solid #0077cc; border-radius:8px; font-size:1rem;" />
+        <label for="email" style="font-weight:700; color:#003d66; display:block; margin-bottom:0.25rem;">Email Address</label>
+        <input type="email" id="email" name="email" required placeholder="jane.doe@example.com" style="width:100%; padding:0.55rem 0.8rem; margin-bottom:1.5rem; border:1px solid #0077cc; border-radius:8px; font-size:1rem;" />
+        <label for="phone" style="font-weight:700; color:#003d66; display:block; margin-bottom:0.25rem;">Phone Number</label>
+        <input type="tel" id="phone" name="phone" placeholder="1300 555 123" pattern="[\d\s\+\-\(\)]{6,}" style="width:100%; padding:0.55rem 0.8rem; margin-bottom:1.5rem; border:1px solid #0077cc; border-radius:8px; font-size:1rem;" />
+        <label for="details" style="font-weight:700; color:#003d66; display:block; margin-bottom:0.25rem;">Project Details</label>
+        <textarea id="details" name="details" rows="5" placeholder="Tell us about your AI system needs..." style="width:100%; padding:0.7rem 1rem; border:1px solid #0077cc; border-radius:8px; font-size:1rem; resize: vertical;" required></textarea>
+        <button type="submit" class="btn-primary" style="margin-top:0.5rem;">Get My Quote</button>
+      </form>
+    </div>
   </section>
 </main>
 
-<a href="tel:+61299998888" class="sticky-call" aria-label="Tap to call Fluffy Tail Dogs">(📞)</a>
+<a href="tel:1300555123" class="sticky-call" aria-label="Call OpenClaw AI Solutions now">
+  <span class="emoji" aria-hidden="true">📞</span> Call Now
+</a>
 
-<footer class="footer" role="contentinfo">
-  <p><strong>Fluffy Tail Dogs</strong> – Styling Wag. Creating Smiles.</p>
-  <p>Proudly serving Cammeray, Mosman, and surrounding NSW areas.</p>
-  <p>Email: <a href="mailto:info@fluffytaildogs.com.au">info@fluffytaildogs.com.au</a> | Phone: <a href="tel:+61299998888">(02) 9999 8888</a></p>
-  <p>Address: 123 Dogtail Lane, Cammeray NSW 2062, Australia</p>
-</footer>
+<!-- Visually hidden for screen readers -->
+<style>
+  .sr-only {
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    padding: 0 !important;
+    margin: -1px !important;
+    overflow: hidden !important;
+    clip: rect(0,0,0,0) !important;
+    white-space: nowrap !important;
+    border: 0 !important;
+  }
+</style>
 
 </body>
 </html>
