@@ -1,0 +1,426 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Final GitHub Publish Test | Digital Workflow Solutions</title>
+<style>
+  :root {
+    --clr-primary: #0a64a0;
+    --clr-secondary: #145374;
+    --clr-accent: #f0a500;
+    --clr-bg: #f9fbfc;
+    --clr-text: #222;
+    --clr-light: #fff;
+    --shadow-md: 0 3px 8px rgba(0,0,0,0.15);
+    --shadow-sm: 0 1px 4px rgba(0,0,0,0.1);
+    --max-width: 1024px;
+  }
+  * {
+    box-sizing: border-box;
+  }
+  body {
+    margin: 0; 
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+      Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+    background: var(--clr-bg);
+    color: var(--clr-text);
+    line-height: 1.5;
+    font-size: 1rem;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  a {
+    color: var(--clr-primary);
+    text-decoration: none;
+  }
+  a:hover, a:focus {
+    text-decoration: underline;
+  }
+  header {
+    position: sticky;
+    top: 0;
+    background: var(--clr-light);
+    box-shadow: var(--shadow-md);
+    z-index: 999;
+  }
+  nav {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    padding: 0.6rem 1rem;
+    align-items: center;
+  }
+  nav h1 {
+    font-size: 1.25rem;
+    color: var(--clr-primary);
+    margin: 0;
+    font-weight: 700;
+  }
+  nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 1rem;
+  }
+  nav a.button {
+    background: var(--clr-primary);
+    color: var(--clr-light);
+    padding: 0.45rem 1.1rem;
+    border-radius: 4px;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: background 0.3s ease;
+  }
+  nav a.button:hover,
+  nav a.button:focus {
+    background: var(--clr-secondary);
+  }
+  main {
+    max-width: var(--max-width);
+    margin: 1.5rem auto 4rem;
+    padding: 0 1rem;
+  }
+  section {
+    margin-bottom: 3rem;
+  }
+  .hero {
+    background: linear-gradient(120deg, #145374 0%, #0a64a0 100%);
+    color: var(--clr-light);
+    border-radius: 8px;
+    padding: 3rem 1.5rem;
+    text-align: center;
+    box-shadow: var(--shadow-md);
+  }
+  .hero h2 {
+    font-size: 1.8rem;
+    margin-bottom: 0.4rem;
+    font-weight: 700;
+  }
+  .hero p {
+    font-size: 1.1rem;
+    margin-bottom: 1.6rem;
+    max-width: 480px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.4;
+  }
+  .hero a.cta {
+    background: var(--clr-accent);
+    color: var(--clr-light);
+    padding: 0.75rem 1.8rem;
+    border-radius: 30px;
+    font-weight: 700;
+    box-shadow: 0 6px 12px rgb(240 165 0 / 0.5);
+    display: inline-block;
+    transition: background 0.3s ease;
+  }
+  .hero a.cta:hover,
+  .hero a.cta:focus {
+    background: #d18800;
+  }
+  .trust {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.25rem;
+    justify-content: center;
+    margin-top: 2rem;
+    color: var(--clr-secondary);
+    font-size: 0.9rem;
+  }
+  .trust-item {
+    background: var(--clr-light);
+    border-radius: 6px;
+    padding: 1rem 1.25rem;
+    box-shadow: var(--shadow-sm);
+    flex: 1 1 240px;
+    min-width: 220px;
+    font-weight: 600;
+    text-align: center;
+  }
+  .cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(260px,1fr));
+    gap: 1.5rem;
+  }
+  .card {
+    background: var(--clr-light);
+    padding: 1.5rem 1.25rem;
+    border-radius: 8px;
+    box-shadow: var(--shadow-sm);
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+  .card h3 {
+    margin: 0;
+    font-size: 1.1rem;
+    color: var(--clr-primary);
+  }
+  .card p {
+    color: var(--clr-text);
+    font-size: 0.95rem;
+    flex-grow: 1;
+  }
+  .about,
+  .process,
+  .why-choose,
+  .service-area,
+  .testimonials,
+  .faq,
+  .contact-cta {
+    background: var(--clr-light);
+    padding: 2rem 1.5rem;
+    border-radius: 8px;
+    box-shadow: var(--shadow-sm);
+  }
+  h2.section-title {
+    font-size: 1.5rem;
+    color: var(--clr-primary);
+    text-align: center;
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+  }
+  ul.simple-list {
+    list-style: none;
+    padding-left: 1.15rem;
+    margin: 0;
+  }
+  ul.simple-list li {
+    position: relative;
+    padding-left: 1.2rem;
+    margin-bottom: 0.7rem;
+  }
+  ul.simple-list li::before {
+    content: "•";
+    position: absolute;
+    left: 0;
+    color: var(--clr-accent);
+    font-weight: 700;
+  }
+  ol.process-list {
+    padding-left: 1.2rem;
+    margin: 0 0 0 1rem;
+    list-style-type: decimal;
+    color: var(--clr-text);
+    font-weight: 600;
+  }
+  ol.process-list li {
+    margin-bottom: 0.8rem;
+    font-weight: 500;
+  }
+  .why-choose ul.simple-list li {
+    padding-left: 1.8rem;
+  }
+  .testimonials blockquote {
+    background: var(--clr-bg);
+    border-left: 5px solid var(--clr-accent);
+    margin: 1rem 0;
+    padding: 1rem 1.25rem;
+    font-style: italic;
+    color: #444;
+  }
+  .faq dl {
+    max-width: 680px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .faq dt {
+    font-weight: 700;
+    margin-top: 1rem;
+  }
+  .faq dd {
+    margin-left: 1.2rem;
+    margin-bottom: 0.8rem;
+    color: #444;
+  }
+  .contact-cta {
+    text-align: center;
+  }
+  .contact-cta a.cta {
+    background: var(--clr-primary);
+    color: var(--clr-light);
+    padding: 0.8rem 2rem;
+    border-radius: 30px;
+    font-weight: 700;
+    box-shadow: var(--shadow-md);
+    display: inline-block;
+    font-size: 1.1rem;
+    margin-top: 1rem;
+  }
+  .contact-cta a.cta:hover,
+  .contact-cta a.cta:focus {
+    background: var(--clr-secondary);
+  }
+  footer {
+    background: var(--clr-secondary);
+    color: var(--clr-light);
+    text-align: center;
+    font-size: 0.9rem;
+    padding: 1.25rem 1rem;
+  }
+  .call-button {
+    position: fixed;
+    bottom: 1.25rem;
+    right: 1.25rem;
+    background: var(--clr-accent);
+    color: var(--clr-light);
+    border-radius: 50%;
+    width: 56px;
+    height: 56px;
+    box-shadow: var(--shadow-md);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.6rem;
+    font-weight: 700;
+    text-decoration: none;
+    z-index: 1100;
+    transition: background 0.3s ease;
+  }
+  .call-button:hover,
+  .call-button:focus {
+    background: #d18800;
+  }
+  @media (min-width:600px) {
+    nav h1 {
+      font-size: 1.5rem;
+    }
+    .hero h2 {
+      font-size: 2.3rem;
+    }
+    .hero p {
+      font-size: 1.2rem;
+    }
+  }
+</style>
+</head>
+<body>
+<header>
+  <nav role="navigation" aria-label="Primary">
+    <h1>Final GitHub Publish Test</h1>
+    <ul>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#process">Process</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="#contact" class="button">Get Started</a></li>
+    </ul>
+  </nav>
+</header>
+<main>
+  <section class="hero" aria-label="Hero section">
+    <h2>Streamline Your Development Memory and Publishing Workflows with Confidence</h2>
+    <p>Robust AI-driven Architecture and Reliable GitHub Integration Tailored for Tomorrow’s Dev Teams</p>
+    <a href="#contact" class="cta">Get Started with Final GitHub Publish Test Today</a>
+    <div class="trust" aria-label="Trust indicators">
+      <div class="trust-item" role="listitem">Developed with cutting-edge AI & local LLM models (Ollama)</div>
+      <div class="trust-item" role="listitem">Proven memory reliability & workflow automation improvements</div>
+      <div class="trust-item" role="listitem">Enhanced pipeline access with secure Cloudflare tunnels</div>
+      <div class="trust-item" role="listitem">Engineered by expert DevOps & AI specialists</div>
+    </div>
+  </section>
+
+  <section id="services" aria-labelledby="services-title">
+    <h2 class="section-title" id="services-title">Our Services</h2>
+    <div class="cards-grid">
+      <article class="card">
+        <h3>Custom AI-Powered Memory Design</h3>
+        <p>Rebuild and optimise your memory architecture tailored for dev team needs.</p>
+      </article>
+      <article class="card">
+        <h3>Local & Cloud Hybrid LLM Integration</h3>
+        <p>Deploy Ollama local LLM with cloud API routing for speed and cost efficiency.</p>
+      </article>
+      <article class="card">
+        <h3>Workflow Automation Tools</h3>
+        <p>Automate n8n & Codex-based code patching and data summarisation.</p>
+      </article>
+      <article class="card">
+        <h3>Secure Cloudflare Tunnel Setup</h3>
+        <p>Ensure constant, protected deployment and pipeline access.</p>
+      </article>
+      <article class="card">
+        <h3>Daily Data Summarisation & Archival</h3>
+        <p>Keep your archives tidy and up-to-date with automatic summarisation.</p>
+      </article>
+      <article class="card">
+        <h3>Publishing Pipeline Consulting</h3>
+        <p>Scalable, maintainable DevOps publishing pipeline expertise.</p>
+      </article>
+    </div>
+  </section>
+
+  <section id="about" class="about" aria-labelledby="about-title">
+    <h2 class="section-title" id="about-title">About Final GitHub Publish Test</h2>
+    <p>Created by industry experts in AI, machine learning, and cloud infrastructure, we deliver stable,
+      scalable memory system rebuilds with Codex and Ollama integration. Our workflows and cloud security
+      safeguard your publishing for smooth operations in dynamic dev environments.</p>
+  </section>
+
+  <section id="process" aria-labelledby="process-title">
+    <h2 class="section-title" id="process-title">Our Process</h2>
+    <ol class="process-list">
+      <li>Assessment of current workflows and memory challenges</li>
+      <li>Redesign using Codex for reliable, compact memory layers</li>
+      <li>Deploy local LLM (Ollama) and cloud API hybrid processing</li>
+      <li>Automate workflow patching and summarising tools</li>
+      <li>Configure secure Cloudflare tunnels for protected access</li>
+      <li>Ongoing monitoring, consultation, and optimisation support</li>
+    </ol>
+  </section>
+
+  <section aria-labelledby="why-title" class="why-choose">
+    <h2 class="section-title" id="why-title">Why Choose Us</h2>
+    <ul class="simple-list" role="list">
+      <li>Expertise merging AI, local models & cloud APIs for optimized workflows</li>
+      <li>Comprehensive rebuild approach based on memory and data best practices</li>
+      <li>Security-focused with advanced Cloudflare tunnel solutions</li>
+      <li>Proven success fixing fragile systems and enabling publishing pipelines</li>
+      <li>Dedicated to scalable, maintainable solutions for dynamic environments</li>
+    </ul>
+  </section>
+
+  <section aria-labelledby="service-area-title" class="service-area">
+    <h2 class="section-title" id="service-area-title">Service Area</h2>
+    <p>Serving Australia’s tech and software development sectors nationwide
+      with remote and on-site support tailored to your needs.</p>
+  </section>
+
+  <section id="testimonials" aria-labelledby="testimonials-title" class="testimonials">
+    <h2 class="section-title" id="testimonials-title">Testimonials</h2>
+    <blockquote>“[Insert client name] saw a 50% reduction in deployment failures after adopting Final GitHub Publish Test.”</blockquote>
+    <blockquote>“The automation tools saved us countless hours on workflow patching – highly recommend.”</blockquote>
+    <blockquote>“Reliable and secure access to our pipelines has made a huge difference in our CI/CD processes.”</blockquote>
+  </section>
+
+  <section id="faq" class="faq" aria-labelledby="faq-title">
+    <h2 class="section-title" id="faq-title">FAQ</h2>
+    <dl>
+      <dt>What makes Final GitHub Publish Test different from other memory systems?</dt>
+      <dd>We combine cutting-edge AI models with local-cloud hybrid solutions for a stable, efficient, automated memory architecture tailored to modern dev environments.</dd>
+      <dt>Can you support integration with existing tools and workflows?</dt>
+      <dd>Yes, we specialize in seamless integration with tools like n8n, Codex, GitHub, and Cloudflare for enhanced automation.</dd>
+      <dt>How secure is the system access?</dt>
+      <dd>We employ secure Cloudflare tunnels and adhere to best security practices, ensuring stable, protected deployment access.</dd>
+      <dt>Do you offer ongoing support and optimisation?</dt>
+      <dd>Absolutely. Our process includes continuous monitoring, consulting, and updates to keep your workflows smooth.</dd>
+    </dl>
+  </section>
+
+  <section id="contact" class="contact-cta" aria-label="Contact call to action">
+    <h2 class="section-title">Ready to optimise your development memory and publishing workflows?</h2>
+    <p>Contact us today to get started or request a free consultation.</p>
+    <a href="mailto:contact@finalgithubpublish.test" class="cta" aria-label="Contact us by email">Contact Us</a>
+  </section>
+</main>
+
+<a href="tel:+61234567890" class="call-button" aria-label="Call Final GitHub Publish Test">📞</a>
+
+<footer>
+  <p>© 2024 Final GitHub Publish Test – Proudly serving Australian tech sectors.</p>
+</footer>
+</body>
+</html>
