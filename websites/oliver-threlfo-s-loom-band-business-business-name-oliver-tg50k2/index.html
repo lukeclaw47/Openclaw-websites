@@ -1,0 +1,424 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Oliver's Loom Bands | Handmade Loom Bands Gold Coast</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  :root {
+    --clr-primary: #f46d75;
+    --clr-secondary: #f9c846;
+    --clr-accent: #4fa9f6;
+    --clr-dark: #2a2a2a;
+    --clr-light: #fff7f2;
+    --shadow: 0 4px 8px rgba(0,0,0,0.1);
+    --radius: 12px;
+    --transition: 0.3s ease;
+    --font-family: "'Segoe UI', Tahoma, Geneva, Verdana, sans-serif";
+  }
+  *, *::before, *::after {box-sizing: border-box;}
+  body {
+    margin:0; font-family: var(--font-family); background: var(--clr-light); color: var(--clr-dark);
+    line-height: 1.5; font-size: 1rem;
+    scroll-padding-top: 70px;
+  }
+  a {color: var(--clr-primary); text-decoration:none; transition: color var(--transition);}
+  a:hover, a:focus {color: var(--clr-accent);}
+  h1,h2,h3 {margin-top: 0; line-height: 1.2;}
+  h1 {font-size: 2rem;}
+  h2 {font-size: 1.5rem; margin-bottom: 0.5rem;}
+  h3 {font-size: 1.25rem; color: var(--clr-primary);}
+  p {margin-top: 0; margin-bottom: 1rem;}
+  small {color: #666;}
+  button, .btn {
+    background: var(--clr-primary);
+    border: none;
+    border-radius: var(--radius);
+    color: white;
+    padding: 0.75em 1.5em;
+    font-weight: 700;
+    font-size: 1rem;
+    cursor: pointer;
+    box-shadow: var(--shadow);
+    transition: background var(--transition);
+    display: inline-block;
+    text-align: center;
+  }
+  button:hover, .btn:hover, button:focus, .btn:focus {
+    background: var(--clr-accent);
+    outline: none;
+  }
+  header {
+    position: sticky;
+    top: 0; left: 0; right: 0;
+    background: var(--clr-light);
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    z-index: 1000;
+  }
+  nav {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75em 1em;
+  }
+  nav .brand {
+    font-weight: 900;
+    font-size: 1.3rem;
+    color: var(--clr-primary);
+  }
+  nav ul {
+    list-style: none;
+    display: flex;
+    gap: 1.25em;
+    margin: 0;
+    padding: 0;
+  }
+  nav a {
+    font-weight: 600;
+  }
+  main {
+    max-width: 1100px;
+    margin: 1rem auto 3rem;
+    padding: 0 1rem;
+  }
+  .hero {
+    background: linear-gradient(135deg, #f46d75 0%, #f9c846 100%);
+    color: #fff;
+    border-radius: var(--radius);
+    padding: 2.5rem 1.5rem 3rem;
+    text-align: center;
+    box-shadow: var(--shadow);
+  }
+  .hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    text-shadow: 0 2px 5px rgba(0,0,0,0.3);
+  }
+  .hero p {
+    font-size: 1.15rem;
+    max-width: 600px;
+    margin: 0 auto 1.5rem;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  }
+  .hero .btn {font-size: 1.15rem; padding: 0.85em 2em; box-shadow: 0 5px 12px rgba(0,0,0,0.2);}
+  section {
+    margin-top: 3rem;
+  }
+  .trust-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+  }
+  .badge {
+    background: var(--clr-light);
+    color: var(--clr-primary);
+    flex: 1 1 220px;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 1.2rem 1rem;
+    font-weight: 600;
+    text-align: center;
+  }
+  .cards {
+    display: grid;
+    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit,minmax(220px,1fr));
+  }
+  .card {
+    background: var(--clr-light);
+    padding: 1.5rem 1.25rem;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+  }
+  .card h3 {margin-bottom: 0.5rem; color: var(--clr-secondary);}
+  .card p {flex-grow: 1;}
+  .about p {
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1.05rem;
+  }
+  ol.process-list {
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 1.25em;
+  }
+  ol.process-list li {
+    margin-bottom: 1.1rem;
+    font-weight: 600;
+  }
+  ol.process-list li span {
+    font-weight: 700;
+    color: var(--clr-primary);
+  }
+  .why-choose {
+    max-width: 700px;
+    margin: 0 auto;
+    display: grid;
+    gap: 1rem;
+  }
+  .why-choose li {
+    background: var(--clr-light);
+    padding: 1rem 1.2rem;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    font-weight: 600;
+  }
+  .service-area {
+    text-align: center;
+    font-size: 1.1rem;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .testimonials {
+    margin-top: 2rem;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  blockquote {
+    background: var(--clr-light);
+    border-left: 5px solid var(--clr-primary);
+    margin: 1rem 0;
+    padding: 1rem 1.25rem;
+    font-style: italic;
+    box-shadow: var(--shadow);
+    border-radius: var(--radius);
+  }
+  blockquote footer {
+    margin-top: 0.5rem;
+    font-weight: 700;
+    color: var(--clr-accent);
+  }
+  .faq dt {
+    font-weight: 700;
+    margin-top: 1rem;
+  }
+  .faq dd {
+    margin-left: 1.25em;
+    margin-bottom: 0.75rem;
+  }
+  .contact-cta {
+    background: var(--clr-primary);
+    color: white;
+    text-align: center;
+    padding: 2rem 1rem 2.5rem;
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    max-width: 700px;
+    margin: 3rem auto 5rem;
+  }
+  .contact-cta h2 {
+    font-size: 1.9rem;
+    margin-bottom: 1rem;
+  }
+  .contact-cta p {
+    font-size: 1.15rem;
+    margin-bottom: 1.5rem;
+  }
+  .contact-cta a.btn {
+    background: var(--clr-light);
+    color: var(--clr-primary);
+    box-shadow: none;
+    font-weight: 700;
+    padding: 0.85em 2.25em;
+    border: 2px solid var(--clr-light);
+  }
+  .contact-cta a.btn:hover, .contact-cta a.btn:focus {
+    background: #fff;
+    color: var(--clr-accent);
+    border-color: var(--clr-accent);
+  }
+  footer {
+    background: var(--clr-dark);
+    color: #ccc;
+    font-size: 0.9rem;
+    text-align: center;
+    padding: 1rem 1rem 2rem;
+  }
+  footer a {
+    color: var(--clr-secondary);
+    text-decoration: underline;
+  }
+  /* Sticky call button on mobile */
+  #call-btn {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    background: var(--clr-secondary);
+    color: var(--clr-dark);
+    font-weight: 700;
+    padding: 0.8em 1.2em;
+    border-radius: 50px;
+    box-shadow: var(--shadow);
+    display: flex;
+    align-items: center;
+    gap: 0.5em;
+    font-size: 1.1rem;
+    text-decoration: none;
+    z-index: 1100;
+  }
+  #call-btn:focus, #call-btn:hover {
+    background: #f5d73d;
+    color: var(--clr-dark);
+    outline: none;
+  }
+  #call-btn svg {
+    width: 20px;
+    height: 20px;
+    fill: var(--clr-dark);
+  }
+  @media(min-width: 600px) {
+    h1 {font-size: 3rem;}
+    .hero p {font-size: 1.25rem;}
+  }
+</style>
+</head>
+<body>
+<header>
+  <nav role="navigation" aria-label="Primary Navigation">
+    <div class="brand" tabindex="0">Oliver's Loom Bands</div>
+    <ul>
+      <li><a href="#services">Services</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#process">How It Works</a></li>
+      <li><a href="#why-choose">Why Choose Us</a></li>
+      <li><a href="#testimonials">Testimonials</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="#contact-cta">Contact</a></li>
+    </ul>
+  </nav>
+</header>
+
+<main>
+  <section class="hero" role="banner" aria-label="Hero section">
+    <h1>Brighten Your Day with Handmade Loom Bands from Oliver!</h1>
+    <p>Colourful, fun, and made just for you on the Gold Coast — perfect for kids, parties, and gifts.</p>
+    <a href="#contact-cta" class="btn" role="button">Ask Oliver about available colours and designs!</a>
+  </section>
+
+  <section aria-label="Trust badges" class="trust-badges" aria-live="polite" aria-relevant="additions">
+    <div class="badge" tabindex="0">Proudly handmade by Gold Coast local Oliver Threlfo</div>
+    <div class="badge" tabindex="0">Trusted by families and schools across the community</div>
+    <div class="badge" tabindex="0">Small business run by a passionate young entrepreneur</div>
+    <div class="badge" tabindex="0">Quality promise: every band made with care and creativity</div>
+  </section>
+
+  <section id="services" aria-label="Services offered">
+    <h2>Services</h2>
+    <div class="cards">
+      <article class="card" tabindex="0">
+        <h3>Custom Handmade Loom Bands</h3>
+        <p>Choose from a wide range of bright colours, all carefully handcrafted by Oliver.</p>
+      </article>
+      <article class="card" tabindex="0">
+        <h3>Matching Sets</h3>
+        <p>Perfect for friends, siblings, and school groups to share vibrant bracelets together.</p>
+      </article>
+      <article class="card" tabindex="0">
+        <h3>Party Favour Packs</h3>
+        <p>Specially tailored to your theme and colours for unforgettable birthday parties.</p>
+      </article>
+      <article class="card" tabindex="0">
+        <h3>Birthday Gift Bundles</h3>
+        <p>Handpicked bundles designed to delight kids on their special day.</p>
+      </article>
+      <article class="card" tabindex="0">
+        <h3>Bulk Orders</h3>
+        <p>Personalised colours and styles for bigger events, school functions, and gifts.</p>
+      </article>
+    </div>
+  </section>
+
+  <section id="about" class="about" aria-label="About Oliver's Loom Bands">
+    <h2>About Oliver's Loom Bands</h2>
+    <p>Oliver’s Loom Bands was started by Oliver Threlfo, an enthusiastic young entrepreneur who loves crafting colourful loom bands for family, friends, and local kids. Since launching his business on the Gold Coast, Oliver has brought smiles to many with his imaginative designs and personal service. Every band is handmade with care and customised to match your favourite colours or special event themes. Choosing Oliver's Loom Bands means supporting a small local business with big heart and creativity.</p>
+  </section>
+
+  <section id="process" aria-label="How it works - The order process">
+    <h2>How It Works</h2>
+    <ol class="process-list">
+      <li><span>Get in Touch:</span> Contact Oliver to discuss your colours, designs, and order size.</li>
+      <li><span>Design Selection:</span> Choose from a variety of styles or request a custom creation.</li>
+      <li><span>Handmade Crafting:</span> Oliver carefully makes each loom band by hand.</li>
+      <li><span>Delivery/Pickup:</span> Receive your colourful, personalised order ready to wear or gift.</li>
+      <li><span>Enjoy & Share:</span> Show off your unique loom bands or delight loved ones with thoughtful gifts.</li>
+    </ol>
+  </section>
+
+  <section id="why-choose" aria-label="Reasons to choose Oliver's Loom Bands">
+    <h2>Why Choose Us</h2>
+    <ul class="why-choose">
+      <li>Handmade with care by a passionate local young entrepreneur</li>
+      <li>Flexible customisation to suit any style, colour, or occasion</li>
+      <li>Affordable pricing without compromising quality</li>
+      <li>Friendly, personalised service and quick responses</li>
+      <li>Supporting community and local family values</li>
+    </ul>
+  </section>
+
+  <section class="service-area" aria-label="Service area">
+    <h2>Service Area</h2>
+    <p>Serving the Gold Coast region and surrounding local communities with delivery and collection options.</p>
+  </section>
+
+  <section id="testimonials" class="testimonials" aria-label="Customer testimonials">
+    <h2>Testimonials</h2>
+    <blockquote tabindex="0">
+      “Oliver’s loom bands made my daughter’s birthday party extra special — colourful, fun, and everyone loved them!” 
+      <footer>– [Parent Name]</footer>
+    </blockquote>
+    <blockquote tabindex="0">
+      “Unique handmade bands perfect for our school group. Oliver was so helpful with custom colours.” 
+      <footer>– [Teacher Name]</footer>
+    </blockquote>
+    <blockquote tabindex="0">
+      “Supporting a young Gold Coast business felt great and the bands were a huge hit with my kids.” 
+      <footer>– [Local Customer Name]</footer>
+    </blockquote>
+  </section>
+
+  <section id="faq" aria-label="Frequently Asked Questions">
+    <h2>FAQ</h2>
+    <dl class="faq">
+      <dt>What colours and designs are available?</dt>
+      <dd>Oliver offers a wide range of bright, vivid colours and patterns. Tell Oliver your preferences, and he can also create custom combinations.</dd>
+
+      <dt>How long does it take to get my order?</dt>
+      <dd>Most loom band orders are completed within 3-5 business days. For larger or custom orders, Oliver will provide an estimated timeline.</dd>
+
+      <dt>Can I order in bulk for a party or school event?</dt>
+      <dd>Absolutely! Oliver can create bulk orders with matching or mixed designs tailored for your event. Contact him for a quote.</dd>
+
+      <dt>Is this service only for Gold Coast residents?</dt>
+      <dd>Primarily yes, but delivery options can be discussed for nearby areas. Collection is available locally.</dd>
+    </dl>
+  </section>
+
+  <section id="contact-cta" class="contact-cta" aria-label="Contact call to action">
+    <h2>Ready to brighten your day with handmade loom bands?</h2>
+    <p><strong>Ask Oliver about available colours and designs today!</strong></p>
+    <a href="tel:+61755512345" class="btn" aria-label="Call Oliver at 07 5551 2345">Call: 07 5551 2345</a>
+    <p style="margin-top:1em;">Or email: <a href="mailto:oliver@loombands.com.au" aria-label="Email Oliver">oliver@loombands.com.au</a></p>
+  </section>
+</main>
+
+<a id="call-btn" href="tel:+61755512345" aria-label="Call Oliver now">
+  <svg aria-hidden="true" viewBox="0 0 24 24"><path d="M6.62 10.79a15.053 15.053 0 006.59 6.59l2.2-2.2a1 1 0 011.11-.21c1.21.49 2.53.76 3.89.76a1 1 0 011 1v3.5a1 1 0 01-1 1A17 17 0 013 6a1 1 0 011-1h3.5a1 1 0 011 1c0 1.36.27 2.68.76 3.89a1 1 0 01-.21 1.11l-2.2 2.2z"/></svg>
+  Call Oliver
+</a>
+
+<footer role="contentinfo">
+  <p>© 2024 Oliver's Loom Bands — Handmade Loom Bands on the Gold Coast. All rights reserved.</p>
+  <p>Designed & Built by Oliver Threlfo</p>
+</footer>
+</body>
+</html>
